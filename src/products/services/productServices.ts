@@ -7,20 +7,21 @@ import Categorie from '../models/categorie';
 import ProductDetail from '../models/productDetail';
 import Product from '../models/product';
 import Marca from '../models/marca';
-
-
-interface GetProductsOptions {
-    slug: string;
-}
+import { Imagene } from '../interfaces/product';
 
 
 
-export const getProducts = async () => {
+export const getProducts = async (page: number) => {
 
+    const numberPag = page * 20;
+  
     await connectDB();
-    const products = await Product.find()
+    const products = await Product.find({imagenes: {$nin: null}})
+        .skip(numberPag)
+        .limit(20)
         .select('-_id -__v')
         .lean();
+   
     await disconnectDB();
 
     return products
@@ -28,7 +29,7 @@ export const getProducts = async () => {
 
 }
 
-export const getProductById = async ({ slug }: GetProductsOptions) => {
+export const getProductById = async ({ slug }: {slug:string}) => {
     await connectDB();
     const slugArr = slug.split('_')
     const id = slugArr[slugArr.length - 1]
@@ -38,7 +39,7 @@ export const getProductById = async ({ slug }: GetProductsOptions) => {
     await disconnectDB();
     return productById[0]
 }
-export const getProductsDetails = async ({ slug }: GetProductsOptions) => {
+export const getProductsDetails = async ({ slug }: {slug:string}) => {
     await connectDB();
     const slugArr = slug.split('_')
     const id = slugArr[slugArr.length - 1]

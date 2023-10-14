@@ -9,11 +9,9 @@ interface Props {
   params: {
     slug: string
   }
-  searchParams?: {
-
-  }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
-const Page = async ({ params: { slug } }: Props) => {
+const Page = async ({ params: { slug }, searchParams  }: Props) => {
 
 
   const product = await getProductById({ slug })
