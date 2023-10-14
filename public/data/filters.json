@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mothers",
+        "orden": 7
+    },
+    {
+        "id": 2,
+        "nombre": "Placas de Video",
+        "orden": 9
+    },
+    {
+        "id": 3,
+        "nombre": "Cables y Adaptadores",
+        "orden": 45
+    },
+    {
+        "id": 4,
+        "nombre": "Consolas de Video Juego",
+        "orden": 42
+    },
+    {
+        "id": 5,
+        "nombre": "Equipos y Notebooks",
+        "orden": 1
+    },
+    {
+        "id": 6,
+        "nombre": "Monitores y Televisores",
+        "orden": 27
+    },
+    {
+        "id": 7,
+        "nombre": "Procesadores",
+        "orden": 5
+    },
+    {
+        "id": 8,
+        "nombre": "Gabinetes",
+        "orden": 21
+    },
+    {
+        "id": 9,
+        "nombre": "Almacenamiento",
+        "orden": 15
+    },
+    {
+        "id": 10,
+        "nombre": "Memorias RAM",
+        "orden": 12
+    },
+    {
+        "id": 11,
+        "nombre": "Joysticks y periféricos para simuladores",
+        "orden": 90
+    },
+    {
+        "id": 12,
+        "nombre": "Conectividad",
+        "orden": 36
+    },
+    {
+        "id": 13,
+        "nombre": "Software",
+        "orden": 87
+    },
+    {
+        "id": 14,
+        "nombre": "Estabilizadores y UPS",
+        "orden": 39
+    },
+    {
+        "id": 16,
+        "nombre": "Seguridad y Vigilancia",
+        "orden": 81
+    },
+    {
+        "id": 17,
+        "nombre": "Celulares y Smartwatch",
+        "orden": 48
+    },
+    {
+        "id": 18,
+        "nombre": "Placas Internas",
+        "orden": 84
+    },
+    {
+        "id": 19,
+        "nombre": "Sillas Gamers",
+        "orden": 33
+    },
+    {
+        "id": 20,
+        "nombre": "Ropa, bolsos y mochilas",
+        "orden": 54
+    },
+    {
+        "id": 22,
+        "nombre": "Teclados y mouses",
+        "orden": 96
+    },
+    {
+        "id": 23,
+        "nombre": "Audio, parlantes, auriculares y mic",
+        "orden": 93
+    },
+    {
+        "id": 24,
+        "nombre": "Periféricos",
+        "orden": 30
+    },
+    {
+        "id": 25,
+        "nombre": "Refrigeración",
+        "orden": 18
+    },
+    {
+        "id": 26,
+        "nombre": "Fuentes",
+        "orden": 24
+    },
+    {
+        "id": 27,
+        "nombre": "Kits de actualización",
+        "orden": 3
+    },
+    {
+        "id": 28,
+        "nombre": "Tablets",
+        "orden": 51
+    },
+    {
+        "id": 29,
+        "nombre": "Impresoras e Insumos",
+        "orden": 95
+    }
+]

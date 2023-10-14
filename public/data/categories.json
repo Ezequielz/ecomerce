@@ -1,0 +1,977 @@
+[
+    {
+        "id": 2,
+        "nombre": "Mouses ",
+        "id_agrupador": 24,
+        "imagen": "Mouses-2.jpg",
+        "sub_cate_oculto_ponderado": "!mouse mause raton ratones  mauses Periféricos ratones Mousses",
+        "banners_sub_categorias": [
+            {
+                "id": 56,
+                "id_sub_cate": 2,
+                "descripcion": "Mouse Logitech",
+                "nombre": "DC_20230808165809_FWBKtbvY.jpg",
+                "nombre_tablet": "DC_20230808165810_JSULaTQe.jpg",
+                "nombre_mobile": "DC_20230808165811_i0t2YAUE.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": 3
+    },
+    {
+        "id": 3,
+        "nombre": "Impresoras y Multifunciones",
+        "id_agrupador": 29,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 5,
+        "nombre": "Monitores y pantallas ",
+        "id_agrupador": 6,
+        "imagen": "monitores.jpg",
+        "sub_cate_oculto_ponderado": "pulgadas",
+        "banners_sub_categorias": [
+            {
+                "id": 45,
+                "id_sub_cate": 5,
+                "descripcion": "Monitores Viewsonic",
+                "nombre": "DC_20221104111402_9KiYf96L.jpg",
+                "nombre_tablet": "DC_20221104111403_N0EhFyc4.jpg",
+                "nombre_mobile": "DC_20221104111404_mbODfv3o.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 6,
+        "nombre": "Placas de Video GeForce ",
+        "id_agrupador": 2,
+        "imagen": "Placas_Video_Nvidial_20220512.jpg",
+        "sub_cate_oculto_ponderado": "gpu video graphics graficas nvidia cards videos",
+        "banners_sub_categorias": [
+            {
+                "id": 28,
+                "id_sub_cate": 6,
+                "descripcion": "GeForce Serie 40",
+                "nombre": "DC_20221104110038_mBUUQE6x.jpg",
+                "nombre_tablet": "DC_20221104110039_ywH5Z3NO.jpg",
+                "nombre_mobile": "DC_20221104110040_0niu7mkd.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 7,
+        "nombre": "Gabinetes ",
+        "id_agrupador": 8,
+        "imagen": "gabinetes.jpg",
+        "sub_cate_oculto_ponderado": "gavinetes gabientes cases ",
+        "banners_sub_categorias": [
+            {
+                "id": 27,
+                "id_sub_cate": 7,
+                "descripcion": "NEW - Gabinetes Kolink",
+                "nombre": "DC_20221103173257_gSVeKLeh.jpg",
+                "nombre_tablet": "DC_20221103173258_FfO27JCz.jpg",
+                "nombre_mobile": "DC_20221103173259_Afw5T9J6.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            },
+            {
+                "id": 46,
+                "id_sub_cate": 7,
+                "descripcion": "Gabinetes Lian Li",
+                "nombre": "DC_20221104122348_CThNDaPs.jpg",
+                "nombre_tablet": "DC_20221104122349_G3V6WxED.jpg",
+                "nombre_mobile": "DC_20221104122350_D1CHaS8I.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 8,
+        "nombre": "Auriculares ",
+        "id_agrupador": 24,
+        "imagen": "auricular1.jpg",
+        "sub_cate_oculto_ponderado": "headsets audifonos Periféricos Audiculares Adriculares abriculares Auricualres",
+        "banners_sub_categorias": [
+            {
+                "id": 57,
+                "id_sub_cate": 8,
+                "descripcion": "Auriculares Logitech",
+                "nombre": "DC_20230808165847_q8Y17yFL.jpg",
+                "nombre_tablet": "DC_20230808165849_vBaXag51.jpg",
+                "nombre_mobile": "DC_20230808165850_Dridn5KY.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": 0
+    },
+    {
+        "id": 12,
+        "nombre": "Opticos DVD/ Blueray RW ",
+        "id_agrupador": 9,
+        "imagen": "opticas.jpg",
+        "sub_cate_oculto_ponderado": "Grabadoras regrabadores regrabadoras laser cd lectoraS lectorES lectograbadoras",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 13,
+        "nombre": "Webcam ",
+        "id_agrupador": 24,
+        "imagen": "webcam.jpg",
+        "sub_cate_oculto_ponderado": "videocamaras camaritas videocameras cameras video Periféricos",
+        "banners_sub_categorias": [
+            {
+                "id": 44,
+                "id_sub_cate": 13,
+                "descripcion": "Webcams",
+                "nombre": "DC_20221104111302_6X9EounH.jpg",
+                "nombre_tablet": "DC_20221104111303_WWFIUUvA.jpg",
+                "nombre_mobile": "DC_20221104111305_D2bCLBhW.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 14,
+        "nombre": "Placas de red inalambricas ",
+        "id_agrupador": 12,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "!wifi wireless inalambricos inalambricas cards",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 15,
+        "nombre": "Memorias ",
+        "id_agrupador": 10,
+        "imagen": "ram4.jpeg",
+        "sub_cate_oculto_ponderado": "Memorys Ram dimm rams unb-dimm udimm unb dimm",
+        "banners_sub_categorias": [
+            {
+                "id": 23,
+                "id_sub_cate": 15,
+                "descripcion": "NEW - Memorias Geil",
+                "nombre": "DC_20221103173016_tZSSSFhk.jpg",
+                "nombre_tablet": "DC_20221103173017_M8edh8Th.jpg",
+                "nombre_mobile": "DC_20221103173018_zAEuiSKp.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 16,
+        "nombre": "Discos Externos ",
+        "id_agrupador": 9,
+        "imagen": "discos portables.jpg",
+        "sub_cate_oculto_ponderado": "HD External DISK INTERANL duros HHD almacenamientoS HDD capacidad",
+        "banners_sub_categorias": [
+            {
+                "id": 33,
+                "id_sub_cate": 16,
+                "descripcion": "Discos Externos TForce",
+                "nombre": "DC_20221104110441_XnTpnStf.jpg",
+                "nombre_tablet": "DC_20221104110442_aupWymuK.jpg",
+                "nombre_mobile": "DC_20221104110443_zL2AwdGT.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            },
+            {
+                "id": 34,
+                "id_sub_cate": 16,
+                "descripcion": "Discos Externos WD",
+                "nombre": "DC_20221104110508_NOc9Hacw.jpg",
+                "nombre_tablet": "DC_20221104110509_9wvd1nbi.jpg",
+                "nombre_mobile": "DC_20221104110510_rtbp5YUM.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 17,
+        "nombre": "Pendrives ",
+        "id_agrupador": 9,
+        "imagen": "pendrives.jpg",
+        "sub_cate_oculto_ponderado": "almacenamientos almasenamientos",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 18,
+        "nombre": "Joysticks",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "joistick mandos comandos Periféricos Jocstics",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 19,
+        "nombre": "Discos Rígidos  ",
+        "id_agrupador": 9,
+        "imagen": "discos.jpg",
+        "sub_cate_oculto_ponderado": "HD DISK INTERANL duros HHD almacenamientoS HDD capacidad",
+        "banners_sub_categorias": [
+            {
+                "id": 26,
+                "id_sub_cate": 19,
+                "descripcion": "NEW - Discos WD",
+                "nombre": "DC_20221103173157_vuudmpOc.jpg",
+                "nombre_tablet": "DC_20221103173158_h0pEi6PI.jpg",
+                "nombre_mobile": "DC_20221103173159_Z68F1Ytj.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 20,
+        "nombre": "Cargadores y Pilas recargables ",
+        "id_agrupador": 14,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "batterys baterias recharge",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 21,
+        "nombre": "Cables y adaptadores ",
+        "id_agrupador": 3,
+        "imagen": "cables y otros.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": [
+            {
+                "id": 49,
+                "id_sub_cate": 21,
+                "descripcion": "Cables y Adaptadores",
+                "nombre": "DC_20221207153217_DjNikI9e.jpg",
+                "nombre_tablet": "DC_20221207153218_We96qjUw.jpg",
+                "nombre_mobile": "DC_20221207153219_tfGufPJd.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 23,
+        "nombre": "GPS ",
+        "id_agrupador": 12,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 24,
+        "nombre": "Insumos Originales",
+        "id_agrupador": 29,
+        "imagen": "cartuchos.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 26,
+        "nombre": "Mothers AMD",
+        "id_agrupador": 1,
+        "imagen": "Mothers_AMD-2.jpg",
+        "sub_cate_oculto_ponderado": "motherboards placas madres bases mathers Mothres Mathres  maders Mosthers",
+        "banners_sub_categorias": [
+            {
+                "id": 10,
+                "id_sub_cate": 26,
+                "descripcion": "Mothers Asrock AMD - Mod",
+                "nombre": "DC_20221104135400_YsQS3779.jpg",
+                "nombre_tablet": "DC_20221104135400_9Jd8kOiR.jpg",
+                "nombre_mobile": "DC_20221104135359_XHBZEJj3.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 27,
+        "nombre": "Procesadores AMD ",
+        "id_agrupador": 7,
+        "imagen": "Procesadores_AMD-2.jpg",
+        "sub_cate_oculto_ponderado": "cpu micros microprocesadores Prosesadores",
+        "banners_sub_categorias": [
+            {
+                "id": 21,
+                "id_sub_cate": 27,
+                "descripcion": "NEW - AMD",
+                "nombre": "DC_20221103172902_S2XKKUMf.jpg",
+                "nombre_tablet": "DC_20221103172903_pGnVgDRy.jpg",
+                "nombre_mobile": "DC_20221103172904_3JH3Mk6z.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 30,
+        "nombre": "Equipos Armados sin pantalla",
+        "id_agrupador": 5,
+        "imagen": "pc.jpg",
+        "sub_cate_oculto_ponderado": "desktopS COMPUTADORAS ORDENADORES  pc pcs armadas armados ",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 31,
+        "nombre": "Estabilizadores ",
+        "id_agrupador": 14,
+        "imagen": "estabilizadores.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 32,
+        "nombre": "Camaras de Vigilancia ",
+        "id_agrupador": 16,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 34,
+        "nombre": "Fuentes de alimentación ",
+        "id_agrupador": 26,
+        "imagen": "fuente.jpg",
+        "sub_cate_oculto_ponderado": "psu power supplys suply poder energia energy FUENTE",
+        "banners_sub_categorias": [
+            {
+                "id": 37,
+                "id_sub_cate": 34,
+                "descripcion": "Fuentes XPG",
+                "nombre": "DC_20221104110721_n8hIbGpL.jpg",
+                "nombre_tablet": "DC_20221104110722_vB0jMbXz.jpg",
+                "nombre_mobile": "DC_20221104110723_EW5qndHw.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 35,
+        "nombre": "Coolers Fan ",
+        "id_agrupador": 25,
+        "imagen": "coolers.jpg",
+        "sub_cate_oculto_ponderado": "ventiladores fanes colers ventilacion",
+        "banners_sub_categorias": [
+            {
+                "id": 32,
+                "id_sub_cate": 35,
+                "descripcion": "Coolers Fan",
+                "nombre": "DC_20221104110418_RhjFp9SN.jpg",
+                "nombre_tablet": "DC_20221104110419_K1BZIY9b.jpg",
+                "nombre_mobile": "DC_20221104110420_JbkBy873.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 36,
+        "nombre": "Coolers CPU",
+        "id_agrupador": 25,
+        "imagen": "cpu_cooler.jpg",
+        "sub_cate_oculto_ponderado": "termicas termicos refrigeración ventilación Radiadores",
+        "banners_sub_categorias": [
+            {
+                "id": 51,
+                "id_sub_cate": 36,
+                "descripcion": "Coolers BeQuiet",
+                "nombre": "DC_20221207153458_b2kp6LrG.jpg",
+                "nombre_tablet": "DC_20221207153459_psqDZMKg.jpg",
+                "nombre_mobile": "DC_20221207153500_HNiXKT13.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 37,
+        "nombre": "Accesorios de modding, htpc y otros",
+        "id_agrupador": 3,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 38,
+        "nombre": "Mouse Pads ",
+        "id_agrupador": 24,
+        "imagen": "mousepad.jpg",
+        "sub_cate_oculto_ponderado": " !mpad alfombra alfombrita Mauspad mouspads mauses  Mousses",
+        "banners_sub_categorias": [
+            {
+                "id": 39,
+                "id_sub_cate": 38,
+                "descripcion": "Mousepad Asus",
+                "nombre": "DC_20221104110830_ELfwwhX2.jpg",
+                "nombre_tablet": "DC_20221104110831_VnsgFDg4.jpg",
+                "nombre_mobile": "DC_20221104110832_M8cje7Rk.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 39,
+        "nombre": "Teclados ",
+        "id_agrupador": 24,
+        "imagen": "Teclados-2.jpg",
+        "sub_cate_oculto_ponderado": "tecados keyboards membrana Periféricos",
+        "banners_sub_categorias": [
+            {
+                "id": 54,
+                "id_sub_cate": 39,
+                "descripcion": "Teclados Logitech",
+                "nombre": "DC_20230808165418_C58icqkc.jpg",
+                "nombre_tablet": "DC_20230808165419_s72w3Zvj.jpg",
+                "nombre_mobile": "DC_20230808165419_eYTLQ36M.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": 2
+    },
+    {
+        "id": 42,
+        "nombre": "Celulares",
+        "id_agrupador": 17,
+        "imagen": "celulares.jpg",
+        "sub_cate_oculto_ponderado": "CELLPHONE android ",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 47,
+        "nombre": "Memorias Notebook",
+        "id_agrupador": 10,
+        "imagen": "sodimm.jpg",
+        "sub_cate_oculto_ponderado": "Memorys Ram sodim soodim soodimm rams",
+        "banners_sub_categorias": [
+            {
+                "id": 24,
+                "id_sub_cate": 47,
+                "descripcion": "NEW - Memorias Sodimm",
+                "nombre": "DC_20221103173041_2GlXBpkv.jpg",
+                "nombre_tablet": "DC_20221103173042_363vi00L.jpg",
+                "nombre_mobile": "DC_20221103173043_44NGLALu.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 48,
+        "nombre": "Procesadores Intel ",
+        "id_agrupador": 7,
+        "imagen": "Procesadores_Intel-2.jpg",
+        "sub_cate_oculto_ponderado": "cpu micros microprocesadores Prosesadores",
+        "banners_sub_categorias": [
+            {
+                "id": 22,
+                "id_sub_cate": 48,
+                "descripcion": "NEW - Intel",
+                "nombre": "DC_20221103172941_VhI59w92.jpg",
+                "nombre_tablet": "DC_20221103172942_UkRefwOd.jpg",
+                "nombre_mobile": "DC_20221103172943_oxzwz0SO.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 49,
+        "nombre": "Mothers Intel",
+        "id_agrupador": 1,
+        "imagen": "Mothers_Intel_20220512.jpg",
+        "sub_cate_oculto_ponderado": "motherboards placas madres bases mathers Mothres Mathres maders Mosthers",
+        "banners_sub_categorias": [
+            {
+                "id": 11,
+                "id_sub_cate": 49,
+                "descripcion": "Mothers Intel ROG - mod",
+                "nombre": "DC_20221104135336_bMc9oeLn.jpg",
+                "nombre_tablet": "DC_20221104135337_x3cduLWB.jpg",
+                "nombre_mobile": "DC_20221104135336_XlXbVWjZ.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 51,
+        "nombre": "Juegos de Xbox 360",
+        "id_agrupador": 4,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 52,
+        "nombre": "Soportes y pantallas",
+        "id_agrupador": 6,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 55,
+        "nombre": "Sistemas Operativos ",
+        "id_agrupador": 13,
+        "imagen": "sistema operativo.jpg",
+        "sub_cate_oculto_ponderado": "OS OPERATION SYSTEM",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 58,
+        "nombre": "Notebooks ",
+        "id_agrupador": 5,
+        "imagen": "laptop.jpg",
+        "sub_cate_oculto_ponderado": "!notebook  PORTATILES TRASLADABLES LAPTOPS noteboks latops EQUIPOS MOVILES MOBILES notbooks Notenooks",
+        "banners_sub_categorias": [
+            {
+                "id": 40,
+                "id_sub_cate": 58,
+                "descripcion": "Notebooks",
+                "nombre": "DC_20221104110904_jUnNjXRB.jpg",
+                "nombre_tablet": "DC_20221104110905_8he7TIXD.jpg",
+                "nombre_mobile": "DC_20221104110906_2z2DoFwh.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 59,
+        "nombre": "Kits de actualización ",
+        "id_agrupador": 27,
+        "imagen": "update.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": [
+            {
+                "id": 50,
+                "id_sub_cate": 59,
+                "descripcion": "Kits de Actualización",
+                "nombre": "DC_20221207153356_RGLDK5RO.jpg",
+                "nombre_tablet": "DC_20221207153356_3AnnhpJD.jpg",
+                "nombre_mobile": "DC_20221207153357_rJBMIKWu.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 62,
+        "nombre": "Placas de Video Radeon AMD",
+        "id_agrupador": 2,
+        "imagen": "Placas_de_Video_Radeon_AsRock_20220512_1424.jpg",
+        "sub_cate_oculto_ponderado": "gpu video graphics graficas Radeon Radeom ati cards  videos Readon Readon ",
+        "banners_sub_categorias": [
+            {
+                "id": 29,
+                "id_sub_cate": 62,
+                "descripcion": "Radeon",
+                "nombre": "DC_20221104110215_FUPiJqSw.jpg",
+                "nombre_tablet": "DC_20221104110216_HANR74Cv.jpg",
+                "nombre_mobile": "DC_20221104110217_vtXZ8p6M.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 64,
+        "nombre": "Accesorios para consolas",
+        "id_agrupador": 4,
+        "imagen": "consola ps4.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": [
+            {
+                "id": 52,
+                "id_sub_cate": 64,
+                "descripcion": "Accesorios para consolas",
+                "nombre": "DC_20221207154234_hERPt9qP.jpg",
+                "nombre_tablet": "DC_20221207154235_1hKK2212.jpg",
+                "nombre_mobile": "DC_20221207154236_yqtKgZiX.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 65,
+        "nombre": "Parlantes ",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "speakers Periféricos",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 66,
+        "nombre": "Sillas Gamers",
+        "id_agrupador": 19,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": [
+            {
+                "id": 42,
+                "id_sub_cate": 66,
+                "descripcion": "Sillas Asus ROG",
+                "nombre": "DC_20221104111036_EsPpZycd.jpg",
+                "nombre_tablet": "DC_20221104111037_mpupbgbY.jpg",
+                "nombre_mobile": "DC_20221104111038_Wg38eWAY.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 67,
+        "nombre": "Pasta Termica",
+        "id_agrupador": 25,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 68,
+        "nombre": "Accesorios para gabinetes",
+        "id_agrupador": 8,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 69,
+        "nombre": "Mochilas y bolsos ",
+        "id_agrupador": 20,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 70,
+        "nombre": "Remeras ",
+        "id_agrupador": 20,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "shirts chombas t shirts t-shuirs casaca",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 72,
+        "nombre": "Combos de Teclados, Mouses y otros ",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "tecados keyboards membrana Periféricos",
+        "banners_sub_categorias": [
+            {
+                "id": 55,
+                "id_sub_cate": 72,
+                "descripcion": "Combos Perifericos logitech",
+                "nombre": "DC_20230808165726_dc4idrcf.jpg",
+                "nombre_tablet": "DC_20230808165727_PFhxKchT.jpg",
+                "nombre_mobile": "DC_20230808165728_aEfuYqPs.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 73,
+        "nombre": "Capturadoras ",
+        "id_agrupador": 2,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 74,
+        "nombre": "Micrófonos ",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "MICROPHONES Mics",
+        "banners_sub_categorias": [
+            {
+                "id": 53,
+                "id_sub_cate": 74,
+                "descripcion": "Microfonos Logitech",
+                "nombre": "DC_20230808165338_5xnModqR.jpg",
+                "nombre_tablet": "DC_20230808165339_khb5Fojf.jpg",
+                "nombre_mobile": "DC_20230808165340_J7ER0l0s.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 75,
+        "nombre": "Proyectores ",
+        "id_agrupador": 7,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 77,
+        "nombre": "Tablet ",
+        "id_agrupador": 28,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 78,
+        "nombre": "Accesorios para auriculares",
+        "id_agrupador": 24,
+        "imagen": "auricular1.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 81,
+        "nombre": "Discos Sólidos SSD ",
+        "id_agrupador": 9,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "HD DISK INTERANL duros HHD almacenamientoS HDD capacidad estado sodidos Sdd",
+        "banners_sub_categorias": [
+            {
+                "id": 25,
+                "id_sub_cate": 81,
+                "descripcion": "NEW - SSD TForce",
+                "nombre": "DC_20221103173106_OFjvrdqt.jpg",
+                "nombre_tablet": "DC_20221103173107_M9nbvFrJ.jpg",
+                "nombre_mobile": "DC_20221103173107_NFp5ajdM.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            },
+            {
+                "id": 36,
+                "id_sub_cate": 81,
+                "descripcion": "SSD WD Black",
+                "nombre": "DC_20221104110656_jCxrNdIJ.jpg",
+                "nombre_tablet": "DC_20221104110657_8TfLQiyn.jpg",
+                "nombre_mobile": "DC_20221104110658_sBiLlboL.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 83,
+        "nombre": "Routers WiFi ",
+        "id_agrupador": 12,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "wireless inalambricos inalambricas !wifi",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 84,
+        "nombre": "Volantes - Simuladores de manejo",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "steering wheel simuladores carreras Periféricos",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 85,
+        "nombre": "Accesorios y repuestos de teclados",
+        "id_agrupador": 24,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 86,
+        "nombre": "Tabletas Digitalizadoras ",
+        "id_agrupador": 28,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "Tabletas graficas",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 89,
+        "nombre": "Smartwatch ",
+        "id_agrupador": 17,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "relojes clock pulseras",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 90,
+        "nombre": "Tarjetas de memorias",
+        "id_agrupador": 9,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 92,
+        "nombre": "Router por cable y Swicht ",
+        "id_agrupador": 12,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 100,
+        "nombre": "Modding | Cables, Iluminación y otros",
+        "id_agrupador": 8,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "custom personalizar personalizaciones",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 101,
+        "nombre": "Cascos VR",
+        "id_agrupador": 11,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "realy virtual realidad virtual 3d",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 102,
+        "nombre": "PC DAY | Equipos con entrega inmediata ",
+        "id_agrupador": 5,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "Equipos Armados desktopS COMPUTADORAS ORDENADORES  pc pcs armadas armados ",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 105,
+        "nombre": "Accesorios de celulares",
+        "id_agrupador": 17,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    },
+    {
+        "id": 109,
+        "nombre": "Consolas",
+        "id_agrupador": 4,
+        "imagen": "consola ps4.jpg",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": [
+            {
+                "id": 31,
+                "id_sub_cate": 109,
+                "descripcion": "Consolas",
+                "nombre": "DC_20221104110312_e3OdLcA5.jpg",
+                "nombre_tablet": "DC_20221104110313_DYD46NF1.jpg",
+                "nombre_mobile": "DC_20221104110314_yCD4hG3y.jpg",
+                "estado": 1,
+                "fecha_lanzamiento": null,
+                "fecha_vencimiento": null
+            }
+        ],
+        "orden": null
+    },
+    {
+        "id": 111,
+        "nombre": "UPS",
+        "id_agrupador": 14,
+        "imagen": "",
+        "sub_cate_oculto_ponderado": "",
+        "banners_sub_categorias": null,
+        "orden": null
+    }
+]

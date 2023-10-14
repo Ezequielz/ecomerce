@@ -1,8 +1,23 @@
+import { Navbar } from '@/components/navbar';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+// import { TanStackProvider } from '../plugins/TanstackProviders';
+import "tw-elements/dist/css/tw-elements.min.css";
 
-const inter = Inter({ subsets: ['latin'] })
+
+import { Montserrat, Open_Sans } from 'next/font/google'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-opensans',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,9 +29,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+ 
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable} font-montserrat`}>
+      <body className='h-screen bg-gray-100'>
+      <Navbar />
+        {/* <TanStackProvider > */}
+          {children}
+        {/* </TanStackProvider> */}
+     
+      </body>
     </html>
   )
 }
