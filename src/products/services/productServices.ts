@@ -7,7 +7,6 @@ import Categorie from '../models/categorie';
 import ProductDetail from '../models/productDetail';
 import Product from '../models/product';
 import Marca from '../models/marca';
-import { Imagene } from '../interfaces/product';
 
 
 
@@ -86,7 +85,7 @@ export const getMarcaById = async ( {id} : {id : number} ) => {
 }
 
 export const getCategories = async () => {
-
+    
     await connectDB();
     const categories = await Categorie.find()
         .select('-_id -__v')

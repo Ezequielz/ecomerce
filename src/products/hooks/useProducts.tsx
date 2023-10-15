@@ -8,11 +8,11 @@ interface Options {
     filterKey?: string;
 }
 
-export const useProducts = ({ filterKey }: Options) => {
-  
+export const useProducts = ({ filterKey = '0' }: Options) => {
+    
     const { isLoading, isError, error, data: products = [], isFetching } = useQuery(
         ['products', { filterKey }],
-        () => getProducts({filterKey}),
+        () => getProducts(+filterKey),
         {
             staleTime: 1000 * 60 * 60
         }

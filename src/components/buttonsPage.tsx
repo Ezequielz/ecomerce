@@ -1,23 +1,41 @@
 'use client'
 
 import Link from "next/link"
-import { FC, useState } from "react"
+import { useState, useEffect, useCallback } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation'
 
-interface Props {
-    page? : number
-}
 
-export const ButtonsPage:FC<Props> = ({page = 0}) => {
-    const [Page, setPage] = useState(page)
+
+export const ButtonsPage = () => {
+    const pathname = usePathname()
+    const searchParams = useSearchParams()!  
+    const pageParam = searchParams.get('page') || 0
+    const [Page, setPage] = useState(0)
+
+    const createQueryString = useCallback(
+        (name: string, value: string) => {
+          const params = new URLSearchParams(searchParams)
+          params.set(name, value)
+     
+          return params.toString()
+        },
+        [searchParams]
+      )
+    //   console.log(pathname + '?' + createQueryString('page', '10'))
+    useEffect(() => {
+
+        setPage(+pageParam)
+
+    }, [pageParam])
 
     return (
         <nav aria-label="Page navigation example">
             <ul className="list-style-none flex">
                 <li>
                     <Link
-                        onClick={() =>setPage(Page - 1)}
+                        onClick={() => setPage(+Page - 1)}
                         className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                        href={`?page=${Page - 1}`}
+                        href={`${pathname + '?' + createQueryString('page', (Page - 1).toString())}`}
                     >Previous
                     </Link>
                 </li>
@@ -43,9 +61,9 @@ export const ButtonsPage:FC<Props> = ({page = 0}) => {
                 </li> */}
                 <li>
                     <Link
-                        onClick={() =>setPage(Page + 1)}
+                        onClick={() => setPage(Page + 1)}
                         className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                        href={`?page=${Page + 1}`}
+                        href={`${pathname + '?' + createQueryString('page', (Page + 1).toString())}`}
                     >Next
                     </Link>
 

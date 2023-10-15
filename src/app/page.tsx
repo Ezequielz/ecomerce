@@ -8,13 +8,14 @@ interface Props {
   params: {
     slug: string
   }
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams?: { [key: string]: string | undefined }
 }
 
  export default async function Home({ params: { slug }, searchParams  }: Props) {
    
    const page = searchParams?.page ? Number(searchParams?.page) : 0
    const products = await getProducts(page)
+
   // console.log('qqq')
   return (
     <main >
@@ -26,7 +27,7 @@ interface Props {
       <footer className="py-5 px-40 flex flex-row justify-center items-start">
 
   
-        <ButtonsPage page={page}/>
+        <ButtonsPage />
 
       </footer>
     </main>
