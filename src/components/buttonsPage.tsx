@@ -9,7 +9,7 @@ import { useQueryParams } from "@/hooks/useQueryParams";
 
 
 export const ButtonsPage = ({ products }: { products: number }) => {
-    console.log('Products', products)
+
     const router = useRouter()
     const searchParams = useSearchParams()
     const pageParam = searchParams.get('page') || 0
@@ -17,9 +17,6 @@ export const ButtonsPage = ({ products }: { products: number }) => {
     const { url } = useQueryParams('page', (currentPage).toString())
 
     useEffect(() => {
-        if(products === 0){
-            // router.push((+pageParam - 1).toString())
-        }
         setPage(+pageParam)
 
     }, [pageParam])
@@ -34,7 +31,7 @@ export const ButtonsPage = ({ products }: { products: number }) => {
         const nextPage = currentPage + 1
         setPage(nextPage)
     }
-    const prev = () => {
+    const prev = () => {git a
 
         const prevPage = currentPage - 1
         setPage(prevPage)
