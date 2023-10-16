@@ -9,13 +9,35 @@ import Product from '../models/product';
 import Marca from '../models/marca';
 
 
+interface Props {
+    searchParams: {
+        [key: string]: string | undefined;
+    } | undefined
+}
 
-export const getProducts = async (page: number) => {
+export const getProducts = async ( {searchParams} : Props) => {
 
+   const page = searchParams?.page ? Number(searchParams.page) : 0
+   const sort = searchParams?.sort && Number(searchParams.sort)
+   const cat = searchParams?.cat && searchParams.cat
+    
     const numberPag = page * 20;
-  
+    let conditionFind: any = {imagenes: {$nin: null}}
+    if (cat) {
+        conditionFind = {...conditionFind, id_subcategoria: cat}
+    }
+    let conditionSort: any = { destacado: 'desc' }
+    if (sort === 0) {
+        conditionSort = { ...conditionSort, precioEspecial: 'desc'}
+    } else if (sort === 1) {
+        conditionSort = { ...conditionSort, precioEspecial: 'asc'}
+    }else if (sort === 2) {
+        conditionSort = { ...conditionSort, destacado: 'asc' }
+    }
+
     await connectDB();
-    const products = await Product.find({imagenes: {$nin: null}})
+    const products = await Product.find(conditionFind)
+        .sort(conditionSort)
         .skip(numberPag)
         .limit(20)
         .select('-_id -__v')

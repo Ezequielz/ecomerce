@@ -2,6 +2,7 @@ import { FC } from "react"
 import { Product } from "../interfaces/product"
 import { ProductCard } from "./productCard"
 import { OptionsShow } from "@/components/optionsShow"
+import { ButtonsPage } from "@/components/buttonsPage"
 
 interface Props {
     products: Product[]
@@ -10,20 +11,35 @@ interface Props {
 export const ProductList: FC<Props> = async ({ products }) => {
 
     return (
-        <div className="w-3/4 p-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20">
+        <section className="w-3/4 p-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20">
             <OptionsShow />
-            <ul
-                className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4  "
-            >
-                {
-                    products.map(product => (
-                        <li key={product.id_producto} >
-                            <ProductCard product={product} />
-                        </li>
-                    ))
-                }
-            </ul>
+            {
+                products.length === 0
+                    ? (
+                        <div>no hay resultados</div>
+                    )
+                    : (
 
-        </div>
+                        <ul
+                            className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4  "
+                        >
+                            {
+                                products.map(product => (
+                                    <li key={product.id_producto} >
+                                        <ProductCard product={product} />
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    )
+            }
+            <footer className="py-5 px-40 flex flex-row justify-center items-start">
+
+
+                <ButtonsPage products={products.length} />
+
+            </footer>
+
+        </section>
     )
 }

@@ -1,5 +1,4 @@
 
-import { ButtonsPage } from "@/components/buttonsPage"
 import { ProductList } from "@/products/components/productList"
 import { Sidebar } from "@/products/components/sidebar"
 import { getProducts } from "@/products/services/productServices"
@@ -13,8 +12,7 @@ interface Props {
 
  export default async function Home({ params: { slug }, searchParams  }: Props) {
    
-   const page = searchParams?.page ? Number(searchParams?.page) : 0
-   const products = await getProducts(page)
+   const products = await getProducts({searchParams})
 
   // console.log('qqq')
   return (
@@ -24,12 +22,7 @@ interface Props {
         <ProductList products={products} />
 
       </section>
-      <footer className="py-5 px-40 flex flex-row justify-center items-start">
 
-  
-        <ButtonsPage />
-
-      </footer>
     </main>
   )
 }

@@ -26,7 +26,7 @@ export const ProductCard:FC<Props> = async({product}) => {
                     ? `https://imagenes.compragamer.com/productos/compragamer_Imganen_general_${product.imagenes[0].nombre}-med.jpg`
                     : undefined} alt="" />
                 {/* <h3>{product.nombre}</h3> */}
-                <strong>{product.precioLista.toLocaleString('es-ar', {
+                <strong>{product.precioEspecial.toLocaleString('es-ar', {
                     currency: 'ARS',
                     style: 'currency'
                 })}
