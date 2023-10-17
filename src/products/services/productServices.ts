@@ -26,14 +26,15 @@ export const getProducts = async ( {searchParams} : Props) => {
     if (cat) {
         conditionFind = {...conditionFind, id_subcategoria: cat}
     }
-    let conditionSort: any = { destacado: 'desc' }
+    let conditionSort: any = { destacado: 1 }
     if (sort === 0) {
-        conditionSort = { ...conditionSort, precioEspecial: 'desc'}
+        conditionSort = { ...conditionSort, destacado: 1 }
+        
     } else if (sort === 1) {
-        conditionSort = { ...conditionSort, precioEspecial: 'asc'}
+        conditionSort = { ...conditionSort, precioEspecial: -1}
     }else if (sort === 2) {
-        conditionSort = { ...conditionSort, destacado: 'asc' }
-    }
+        conditionSort = { ...conditionSort, precioEspecial: 1}
+    } 
 
     await connectDB();
     const products = await Product.find(conditionFind)

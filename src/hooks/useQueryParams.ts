@@ -2,7 +2,6 @@ import { useCallback } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 
 export const useQueryParams = (name: string, value: string) => {
-  console.log(value)
     const pathname = usePathname()
     const searchParams = useSearchParams()
 

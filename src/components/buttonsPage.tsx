@@ -31,7 +31,7 @@ export const ButtonsPage = ({ products }: { products: number }) => {
         const nextPage = currentPage + 1
         setPage(nextPage)
     }
-    const prev = () => {git a
+    const prev = () => {
 
         const prevPage = currentPage - 1
         setPage(prevPage)
@@ -41,13 +41,12 @@ export const ButtonsPage = ({ products }: { products: number }) => {
 
     return (
         <nav aria-label="Page navigation example">
-            <ul className="list-style-none flex">
+            <ul className="list-style-none flex gap-1">
                 <li >
                     <button
                         disabled={currentPage === 0}
-
                         onClick={prev}
-                        className=" relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                        className={`${currentPage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-neutral-100 hover:text-[#fd611a] hover:border-2 hover:border-solid hover:border-[#fd611a]'} relative block rounded bg-[#fd611a] px-3 py-1.5 text-sm text-white transition-all duration-300 `}
                     >Previous
 
                     </button>
@@ -58,7 +57,7 @@ export const ButtonsPage = ({ products }: { products: number }) => {
                     <button
                         disabled={products < 20}
                         onClick={next}
-                        className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                        className={`${products < 20 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-neutral-100 hover:text-[#fd611a] hover:border-2 hover:border-solid hover:border-[#fd611a]'} relative block rounded bg-[#fd611a] px-3 py-1.5 text-sm text-white transition-all duration-300 `}
                     >Next
 
                     </button>

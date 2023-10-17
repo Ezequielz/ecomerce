@@ -11,11 +11,10 @@ export const OptionsShow = () => {
 
     const router = useRouter()
     const [select, setSelect] = useState('')
-    const { url } = useQueryParams('order', select)
+    const { url } = useQueryParams('sort', select)
 
     useEffect(() => {
         if (select === '') return;
-        // router.push(`/?order=${select}`)
         router.push(url)
     }, [select])
 
@@ -28,16 +27,27 @@ export const OptionsShow = () => {
     });
     return (
         <header className="w-full bg-white p-2 mb-3 flex justify-between items-center">
-            <select 
+            <select
                 value={select}
                 onChange={(e) => setSelect(e.target.value)}
                 className="w-1/3 block py-2.5 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-[#fd611a]  "
+                placeholder='ordenar por'
             >
-                
-                <option selected value="">Destacados</option>
-                <option value="0">Mayor precio</option>
-                <option value="1">Menor precio</option>
-                <option value="2">Nombre</option>
+                {
+                    select === ''
+                        ? (
+                            <option selected value="">Ordenar por</option>
+
+                        )
+                        : (
+
+                            <option selected value="0">Default</option>
+                        )
+
+                }
+                <option value="1">Mayor precio</option>
+                <option value="2">Menor precio</option>
+
 
             </select>
             <div className='flex text-xl text-[#fd611a] gap-2 items-center'>

@@ -18,6 +18,7 @@ interface Props {
   return (
     <main >
       <section className="py-5 px-40 flex flex-row justify-center items-start">
+        
         <Sidebar />
         <ProductList products={products} />
 

@@ -1,12 +1,12 @@
 import { Navbar } from '@/components/navbar';
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 // import { TanStackProvider } from '../plugins/TanstackProviders';
 import "tw-elements/dist/css/tw-elements.min.css";
 
 
 import { Montserrat, Open_Sans } from 'next/font/google'
+import { Slider } from '@/components/slider';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -34,6 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} font-montserrat`}>
       <body className='h-screen bg-gray-100'>
+      <Slider />
+      <div className='h-5'>
+
+      </div>
       <Navbar />
         {/* <TanStackProvider > */}
           {children}
