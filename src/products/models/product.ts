@@ -37,7 +37,7 @@ const productSchema = new Schema({
 });
 
 
-// productSchema.index({ name: 'text', market_hash_name: 'text'});
+productSchema.index({ nombre: 'text'});
 
 
 const Product: Model<Product> = models.Product || model('Product', productSchema );

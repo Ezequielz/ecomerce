@@ -7,6 +7,7 @@ import Categorie from '../models/categorie';
 import ProductDetail from '../models/productDetail';
 import Product from '../models/product';
 import Marca from '../models/marca';
+import CarouselMain from '../models/carouselMain';
 
 
 interface Props {
@@ -20,9 +21,20 @@ export const getProducts = async ( {searchParams} : Props) => {
    const page = searchParams?.page ? Number(searchParams.page) : 0
    const sort = searchParams?.sort && Number(searchParams.sort)
    const cat = searchParams?.cat && searchParams.cat
+   const search = searchParams?.criterio ? searchParams.criterio : ''
+//    const term = search.toString()
     
     const numberPag = page * 20;
     let conditionFind: any = {imagenes: {$nin: null}}
+
+
+    if (search) {
+    
+        
+        conditionFind = {
+            $text: { $search: search }
+        }
+    }
     if (cat) {
         conditionFind = {...conditionFind, id_subcategoria: cat}
     }
@@ -37,6 +49,7 @@ export const getProducts = async ( {searchParams} : Props) => {
     } 
 
     await connectDB();
+   
     const products = await Product.find(conditionFind)
         .sort(conditionSort)
         .skip(numberPag)
@@ -50,6 +63,7 @@ export const getProducts = async ( {searchParams} : Props) => {
 
 
 }
+
 
 export const getProductById = async ({ slug }: {slug:string}) => {
     await connectDB();
@@ -127,6 +141,21 @@ export const getCategorieById = async ( {id} : {id : number} ) => {
     await disconnectDB();
     return categorietById[0]
 }
+
+export const getCarouselMain = async ( ) => {
+
+ 
+     await connectDB();
+     const carouselMain = await CarouselMain.find()
+         .select('-_id -__v')
+         .lean();
+    
+     await disconnectDB();
+ 
+     return carouselMain
+ 
+ 
+ }
 
 
 

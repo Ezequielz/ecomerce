@@ -10,7 +10,7 @@ import { useQueryParams } from '@/hooks/useQueryParams';
 export const OptionsShow = () => {
 
     const router = useRouter()
-    const [select, setSelect] = useState('')
+    const [select, setSelect] = useState('default')
     const { url } = useQueryParams('sort', select)
 
     useEffect(() => {
@@ -34,9 +34,9 @@ export const OptionsShow = () => {
                 placeholder='ordenar por'
             >
                 {
-                    select === ''
+                    select === 'default'
                         ? (
-                            <option selected value="">Ordenar por</option>
+                            <option selected value="default">Ordenar por</option>
 
                         )
                         : (

@@ -1,31 +1,30 @@
 
+'use client'
 
-// import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import Link from "next/link";
-import { getCategories, getFilters } from "../services/productServices";
-import { FC } from "react";
-// import { useFilters } from "../hooks/useFilters";
-// import { useCategories } from "../hooks/useCategories";
+import { Categorie } from "../interfaces/categorie";
+import { Filter } from "../interfaces/filter";
+
+interface Props {
+    categories: Categorie[],
+    allFilters: Filter[]
+}
 
 
-export const Sidebar = async () => {
-
-
-    // const { isLoading: isLoadingFilters, filters: allFilters } = useFilters();
-    // const { isLoading: isLoadingCategories, categories } = useCategories();
-    const allFilters = await getFilters()
-    const categories = await getCategories()
+export const Sidebar:FC<Props> =  ({allFilters,categories}) => {
 
     const notShow = ['11', '23', '13', '18', '16', '20', '22', '28', '17', '12', '27']
-    const filters = allFilters.filter(filt => !notShow.includes(filt.id.toString()))
+    const filters =  allFilters.filter(filt => !notShow.includes(filt.id.toString()))
     filters.sort((a, b) => a.orden.toString().localeCompare(b.orden.toString()))
-    // useEffect(() => {
-    //     const init = async () => {
-    //         const { Collapse, initTE } = await import("tw-elements");
-    //         initTE({ Collapse });
-    //     };
-    //     init();
-    // }, []);
+
+    useEffect(() => {
+        const init = async () => {
+            const { Collapse, initTE } = await import("tw-elements");
+            initTE({ Collapse });
+        };
+        init();
+    }, []);
 
 
 
@@ -118,7 +117,7 @@ export const Sidebar = async () => {
                                                     return (
 
                                                         <li className="cursor-pointer  px-2 " key={cate.id}>
-                                                            <Link href={`/?cat=${cate.id}&page=0`} >
+                                                            <Link href={`/product/?cat=${cate.id}&page=0`} >
                                                                 <h3 data-te-sidenav-link-ref
                                                                     className="hover:bg-black hover:opacity-50 hover:text-white opacity-50 rounded-lg text-sm px-5 m-1">
                                                                     - {cate.nombre}

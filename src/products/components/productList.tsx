@@ -11,7 +11,7 @@ interface Props {
 export const ProductList: FC<Props> = async ({ products }) => {
 
     return (
-        <section className="w-3/4 p-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20">
+        <section className="w-3/4 pl-4 pt-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20">
             <OptionsShow />
             {
                 products.length === 0
