@@ -1,22 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
-import { useQueryParams } from "@/hooks/useQueryParams"
+import { ChangeEvent, useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
-import { ChangeEvent, useEffect, useState } from "react"
+import { useQueryParams } from "@/hooks/useQueryParams"
 
 export const Search = () => {
+    const router = useRouter()
     const [search, setSearch] = useState('')
     const { url } = useQueryParams('criterio', search)
-    const router = useRouter()
     
     useEffect(() => {
         if (search === '') return;
         router.push(url)
     }, [search])
 
+    const debounceRef = useRef<NodeJS.Timeout>()
+
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value)
+        if (debounceRef.current) clearTimeout(debounceRef.current)
+        debounceRef.current = setTimeout(() => {
+            setSearch(e.target.value)
+        }, 1500)
     }
 
     return (

@@ -23,16 +23,18 @@ export const getProducts = async ( {searchParams} : Props) => {
    const cat = searchParams?.cat && searchParams.cat
    const search = searchParams?.criterio ? searchParams.criterio : ''
 //    const term = search.toString()
-    
+    console.log(search)
     const numberPag = page * 20;
     let conditionFind: any = {imagenes: {$nin: null}}
-
+    const a = 'parlante'
 
     if (search) {
-    
-        
+            
         conditionFind = {
-            $text: { $search: search }
+            // $text: { $search: search }
+            ...conditionFind,
+            nombre:{$regex:`\(([^()]*${search}[^()]*)\)`, $options : "i"}
+            // nombre:{$regex:`.*${search}.*`, $options : "i"}
         }
     }
     if (cat) {
