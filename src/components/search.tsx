@@ -1,36 +1,59 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
-import { ChangeEvent, useEffect, useRef, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useQueryParams } from "@/hooks/useQueryParams"
+
 
 export const Search = () => {
     const router = useRouter()
     const [search, setSearch] = useState('')
     const { url } = useQueryParams('criterio', search)
-    
+    const searchParams = useSearchParams()
+    const criterio = searchParams.get('criterio')
+   
     useEffect(() => {
-        if (search === '') return;
-        router.push(url)
+      if ( criterio === null){
+        setSearch('')
+      }
+    }, [criterio])
+  
+    useEffect(() => {
+        if( search.trim().length === 0 ) {
+          
+            router.push(url)
+           
+        };
+       
+        // router.push(url)
     }, [search])
 
-    const debounceRef = useRef<NodeJS.Timeout>()
+    // const debounceRef = useRef<NodeJS.Timeout>()
 
-    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-        if (debounceRef.current) clearTimeout(debounceRef.current)
-        debounceRef.current = setTimeout(() => {
-            setSearch(e.target.value)
-        }, 1500)
+    // const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    //     if (debounceRef.current) clearTimeout(debounceRef.current)
+    //     debounceRef.current = setTimeout(() => {
+    //         setSearch(e.target.value)
+    //     }, 1500)
+    // }
+    const onSearchTerm = () => {
+        if( search.trim().length === 0 ) return;
+        router.push(`/product?criterio=${search}`)
     }
+
 
     return (
         <div className="relative  w-[24.7rem]" data-te-input-wrapper-init>
             <input
+                autoComplete="off"
                 type="search"
-                onChange={(e) => handleSearch(e)}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={ (e) => e.key === 'Enter' ? onSearchTerm() : null }
                 className="peer block min-h-[auto] w-full rounded border-2 border-solid focus:border-red-500 bg-white px-3 py-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="search"
+                value={search}
+                // name={search}
                 placeholder="Buscar producto" />
             <label
                 htmlFor="search"
@@ -40,6 +63,7 @@ export const Search = () => {
             {
                 search === '' &&
                 <span
+                    onClick={() => setSearch('')}
                     className="absolute top-2 right-0 input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
                     id="basic-addon2">
                     <svg
@@ -48,9 +72,9 @@ export const Search = () => {
                         fill="currentColor"
                         className="h-6 w-5">
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                            clip-rule="evenodd" />
+                            clipRule="evenodd" />
                     </svg>
                 </span>
             }

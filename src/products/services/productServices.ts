@@ -149,6 +149,7 @@ export const getCarouselMain = async ( ) => {
  
      await connectDB();
      const carouselMain = await CarouselMain.find()
+         .sort({orden:1})
          .select('-_id -__v')
          .lean();
     

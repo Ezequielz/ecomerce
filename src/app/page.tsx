@@ -7,11 +7,11 @@ import { getCarouselMain } from "@/products/services/productServices";
 
  export default async function Home() {
 
-  const carouselMail = await getCarouselMain()
+  const carouselMain = await getCarouselMain()
 
   return (
     <main className="">
-        <Carousel carouselMail={carouselMail}/>
+        <Carousel carouselMain={carouselMain}/>
 
     </main>
   )

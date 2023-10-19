@@ -3,16 +3,27 @@ import { Product } from "../interfaces/product"
 import { ProductCard } from "./productCard"
 import { OptionsShow } from "@/components/optionsShow"
 import { ButtonsPage } from "@/components/buttonsPage"
+import { Chip } from "@/components/chip"
 
 interface Props {
-    products: Product[]
+    products: Product[],
+    chip: { catName: string | undefined, search: string | undefined; }
 }
 
-export const ProductList: FC<Props> = async ({ products }) => {
+export const ProductList: FC<Props> = async ({ products, chip }) => {
+    const {catName, search} = chip
 
     return (
         <section className="w-3/4 pl-4 pt-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20">
             <OptionsShow />
+            {
+                catName !== undefined &&  <Chip text={catName}/>
+            }
+            {
+                search !== undefined && <Chip text={search}/>
+            }
+            
+           
             {
                 products.length === 0
                     ? (

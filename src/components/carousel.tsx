@@ -9,33 +9,38 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay'; 
 import { CarouselMain } from '@/products/interfaces/carouselMain';
 import { FC } from 'react';
+import Link from 'next/link';
+
+
 
 interface Props {
-    carouselMail: CarouselMain[]
+    carouselMain: CarouselMain[]
 }
 
-export const Carousel:FC<Props> = ({carouselMail}) => {
-  
+export const Carousel:FC<Props> = ({carouselMain}) => {
+const BASE_URL = 'http://localhost:3000/'
     return (
 
         <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         // spaceBetween={1}
         slidesPerView={1}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         navigation={true}
         loop={true}
         pagination={{
             clickable: true,
           }}
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => {return}}
+        onSwiper={(swiper) => {return}}
       >
         {
-            carouselMail.map(item => (
+            carouselMain.map(item => (
                 <SwiperSlide key={item.id}>
+                  <Link href={`${BASE_URL}${item.link}`} >
                     <img src={`https://imagenes.compragamer.com/bannerPrincipal/${item.nombre}`} alt="" />
+                  </Link>
                
                 </SwiperSlide>
 
