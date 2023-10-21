@@ -16,49 +16,48 @@ interface Props {
     } | undefined
 }
 
-export const getProducts = async ( {searchParams} : Props) => {
+export const getProducts = async ({ searchParams }: Props) => {
 
-   const page = searchParams?.page ? Number(searchParams.page) : 0
-   const sort = searchParams?.sort && Number(searchParams.sort)
-   const cat = searchParams?.cat && searchParams.cat
-   const search = searchParams?.criterio ? searchParams.criterio : ''
-//    const term = search.toString()
-    console.log(search)
+    const page = searchParams?.page ? Number(searchParams.page) : 0
+    const sort = searchParams?.sort && Number(searchParams.sort)
+    const cat = searchParams?.cat && searchParams.cat
+    const search = searchParams?.criterio ? searchParams.criterio : ''
+
+
     const numberPag = page * 20;
-    let conditionFind: any = {imagenes: {$nin: null}}
-    const a = 'parlante'
+    let conditionFind: any = { imagenes: { $nin: null } }
 
-    if (search) {
-            
+
+    if (search.length > 1) {
+
         conditionFind = {
             // $text: { $search: search }
             ...conditionFind,
-            nombre:{$regex:`\(([^()]*${search}[^()]*)\)`, $options : "i"}
+            nombre: { $regex: `\(([^()]*${search}[^()]*)\)`, $options: "i" }
             // nombre:{$regex:`.*${search}.*`, $options : "i"}
         }
     }
     if (cat) {
-        conditionFind = {...conditionFind, id_subcategoria: cat}
+        conditionFind = { ...conditionFind, id_subcategoria: cat }
     }
-    let conditionSort: any = { destacado: 1 }
-    if (sort === 0) {
-        conditionSort = { ...conditionSort, destacado: 1 }
-        
-    } else if (sort === 1) {
-        conditionSort = { ...conditionSort, precioEspecial: -1}
-    }else if (sort === 2) {
-        conditionSort = { ...conditionSort, precioEspecial: 1}
-    } 
+    let conditionSort: any
+    if (sort === 1) {
+        conditionSort = { precioEspecial: -1 }
+    } else if (sort === 2) {
+        conditionSort = { precioEspecial: 1 }
+    } else {
+        conditionSort = { destacado: -1 }
+    }
 
     await connectDB();
-   
+
     const products = await Product.find(conditionFind)
         .sort(conditionSort)
         .skip(numberPag)
         .limit(20)
         .select('-_id -__v')
         .lean();
-   
+
     await disconnectDB();
 
     return products
@@ -67,7 +66,7 @@ export const getProducts = async ( {searchParams} : Props) => {
 }
 
 
-export const getProductById = async ({ slug }: {slug:string}) => {
+export const getProductById = async ({ slug }: { slug: string }) => {
     await connectDB();
     const slugArr = slug.split('_')
     const id = slugArr[slugArr.length - 1]
@@ -77,16 +76,26 @@ export const getProductById = async ({ slug }: {slug:string}) => {
     await disconnectDB();
     return productById[0]
 }
-export const getProductsDetails = async ({ slug }: {slug:string}) => {
+export const getProductDetailsBySlug = async ({ slug }: { slug: string }) => {
     await connectDB();
     const slugArr = slug.split('_')
     const id = slugArr[slugArr.length - 1]
     const productDetail = await ProductDetail.find({ id_producto: id })
-    .select('-_id -__v')
-    .lean();
+        .select('-_id -__v')
+        .lean();
     await disconnectDB();
     return productDetail[0];
 }
+// export const getProductsDetails = async ({ slug }: { slug: string }) => {
+//     await connectDB();
+//     const slugArr = slug.split('_')
+//     const id = slugArr[slugArr.length - 1]
+//     const productDetail = await ProductDetail.find({ id_producto: id })
+//         .select('-_id -__v')
+//         .lean();
+//     await disconnectDB();
+//     return productDetail;
+// }
 
 
 export const getFilters = async () => {
@@ -103,7 +112,7 @@ export const getFilters = async () => {
 
     return filters;
 }
-export const getFilterById = async ( {id} : {id : number} ) => {
+export const getFilterById = async ({ id }: { id: number }) => {
     await connectDB();
 
     const filtertById = await Filter.find({ id })
@@ -113,7 +122,7 @@ export const getFilterById = async ( {id} : {id : number} ) => {
     return filtertById[0]
 }
 
-export const getMarcaById = async ( {id} : {id : number} ) => {
+export const getMarcaById = async ({ id }: { id: number }) => {
     await connectDB();
 
     const marcaById = await Marca.find({ id })
@@ -124,7 +133,7 @@ export const getMarcaById = async ( {id} : {id : number} ) => {
 }
 
 export const getCategories = async () => {
-    
+
     await connectDB();
     const categories = await Categorie.find()
         .select('-_id -__v')
@@ -134,7 +143,7 @@ export const getCategories = async () => {
 
     return categories;
 }
-export const getCategorieById = async ( {id} : {id : number} ) => {
+export const getCategorieById = async ({ id }: { id: number }) => {
     await connectDB();
 
     const categorietById = await Categorie.find({ id })
@@ -144,21 +153,21 @@ export const getCategorieById = async ( {id} : {id : number} ) => {
     return categorietById[0]
 }
 
-export const getCarouselMain = async ( ) => {
+export const getCarouselMain = async () => {
 
- 
-     await connectDB();
-     const carouselMain = await CarouselMain.find()
-         .sort({orden:1})
-         .select('-_id -__v')
-         .lean();
-    
-     await disconnectDB();
- 
-     return carouselMain
- 
- 
- }
+
+    await connectDB();
+    const carouselMain = await CarouselMain.find()
+        .sort({ orden: 1 })
+        .select('-_id -__v')
+        .lean();
+
+    await disconnectDB();
+
+    return carouselMain
+
+
+}
 
 
 

@@ -14,7 +14,7 @@ export const OptionsShow = () => {
     const { url } = useQueryParams('sort', select)
 
     useEffect(() => {
-        if (select === '') return;
+        if (select.trim().length === 0) return;
         router.push(url)
     }, [select])
 
@@ -26,7 +26,7 @@ export const OptionsShow = () => {
         init();
     });
     return (
-        <header className="w-full bg-white p-2 mb-3 flex justify-between items-center">
+        <header className="w-full bg-white p-2 mb-3 flex justify-between items-center rounded-lg border-solid border-2 shadow-sm">
             <select
                 value={select}
                 onChange={(e) => setSelect(e.target.value)}
@@ -36,12 +36,12 @@ export const OptionsShow = () => {
                 {
                     select === 'default'
                         ? (
-                            <option selected value="default">Ordenar por</option>
+                            <option selected value="default"  >Ordenar por</option>
 
                         )
                         : (
 
-                            <option selected value="0">Default</option>
+                            <option value="0">Default</option>
                         )
 
                 }
@@ -50,9 +50,15 @@ export const OptionsShow = () => {
 
 
             </select>
-            <div className='flex text-xl text-[#fd611a] gap-2 items-center'>
-                <MdOutlineViewModule />
-                <MdOutlineViewList />
+            <div className='flex text-xl text-[#fd611a]  items-center'>
+                <button className='text-[#fd611a] hover:bg-slate-100  py-1 px-1 rounded-md  font-semibold '>
+                    <MdOutlineViewModule />
+
+                </button>
+                <button className='text-[#fd611a] hover:bg-slate-100  py-1 px-1 rounded-md  font-semibold '>
+                    <MdOutlineViewList />
+
+                </button>
 
             </div>
         </header>

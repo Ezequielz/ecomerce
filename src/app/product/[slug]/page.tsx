@@ -2,8 +2,9 @@
 import { MdLocalShipping, MdOutlineSecurity } from 'react-icons/md';
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineCheck, AiOutlineInfoCircle } from 'react-icons/ai';
-import { getCategorieById, getFilterById, getMarcaById, getProductById, getProductsDetails } from "@/products/services/productServices"
+import { getCategorieById, getFilterById, getMarcaById, getProductById } from "@/products/services/productServices"
 import { Breadcrumbs } from '@/components/breadcrumbs';
+import { getProductDetailsBySlug } from '../../../products/services/productServices';
 
 interface Props {
   params: {
@@ -15,7 +16,7 @@ const Page = async ({ params: { slug }, searchParams  }: Props) => {
 
 
   const product = await getProductById({ slug })
-  const details = await getProductsDetails({ slug })
+  const details = await getProductDetailsBySlug({ slug })
 
   const categorie = await getCategorieById({ id: product.id_subcategoria })
   const filter = await getFilterById({ id: categorie.id_agrupador })

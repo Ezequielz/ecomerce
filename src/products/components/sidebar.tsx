@@ -1,23 +1,32 @@
 
 'use client'
 
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { Categorie } from "../interfaces/categorie";
 import { Filter } from "../interfaces/filter";
+import { SideFilters } from "./sideFilters";
+import { Product } from "../interfaces/product";
+
+
 
 interface Props {
     categories: Categorie[],
-    allFilters: Filter[]
+    allFilters: Filter[],
+    cat?: Categorie,
+    products: Product[]
+  
 }
 
 
-export const Sidebar:FC<Props> =  ({allFilters,categories}) => {
-
+export const Sidebar:FC<Props> =  ({allFilters,categories, cat, products}) => {
+   
     const notShow = ['11', '23', '13', '18', '16', '20', '22', '28', '17', '12', '27']
     const filters =  allFilters.filter(filt => !notShow.includes(filt.id.toString()))
     filters.sort((a, b) => a.orden.toString().localeCompare(b.orden.toString()))
+    
 
+   
     useEffect(() => {
         const init = async () => {
             const { Collapse, initTE } = await import("tw-elements");
@@ -30,7 +39,7 @@ export const Sidebar:FC<Props> =  ({allFilters,categories}) => {
 
     return (
 
-        <aside className="w-1/4 pt-4">
+        <aside className="w-4/12 pt-4 shadow-lg">
             <div className="acordion_categorias">
                 {/* btn despliegue categorias */}
                 <button
@@ -181,8 +190,8 @@ export const Sidebar:FC<Props> =  ({allFilters,categories}) => {
                     id={`FiltrosCollapse`}
                 // aria-labelledby={}
                 >
-                    <p className="bg-white p-5">Los filtros de productos son aplicables a las subcategorías, 
-                        elegí una en el menú de categorías.</p>
+                    <SideFilters cat={cat} products={products} />
+
                 </div>
             </div>
 
