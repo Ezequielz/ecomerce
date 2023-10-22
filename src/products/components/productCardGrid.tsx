@@ -9,7 +9,7 @@ interface Props {
 }
 
 
-export const ProductCard: FC<Props> = async ({ product }) => {
+export const ProductCardGrid: FC<Props> = ({ product }) => {
 
     const slug = product.nombre.trim()
         .replaceAll(' ', '_')

@@ -10,9 +10,9 @@ import { getCarouselMain } from "@/products/services/productServices";
   const carouselMain = await getCarouselMain()
 
   return (
-    <main className="">
+    <div className="">
         <Carousel carouselMain={carouselMain}/>
 
-    </main>
+    </div>
   )
 }

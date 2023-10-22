@@ -2,9 +2,9 @@
 import { Banner } from "@/components/banner"
 import { ProductList } from "@/products/components/productList"
 import { Sidebar } from "@/products/components/sidebar"
-import { Categorie } from "@/products/interfaces/categorie"
+// import { Categorie } from "@/products/interfaces/categorie"
 import { getCategorieById, getCategories, getFilters, getProducts } from "@/products/services/productServices"
-import { getProductDetailsBySlug } from '../../products/services/productServices';
+// import { getProductDetailsBySlug } from '../../products/services/productServices';
 interface Props {
     params: {
       slug: string

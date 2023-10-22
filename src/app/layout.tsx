@@ -8,6 +8,8 @@ import "tw-elements/dist/css/tw-elements.min.css";
 import { Montserrat, Open_Sans } from 'next/font/google'
 import { Slider } from '@/components/slider';
 import { MainHeader } from '@/components/mainheader';
+import { CarouselMarcas } from '@/components/carouselMarcas';
+import { Footer } from '@/components/footer';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -31,20 +33,27 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
- 
+
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} font-montserrat`}>
       <head>
         <link rel="icon" href="/icono.ico" sizes='any' />
       </head>
       <body className='h-screen bg-gray-100'>
-      <Slider />
-      <MainHeader />
-      <Navbar />
+        <header>
+          <Slider />
+          <MainHeader />
+          <Navbar />
+        </header>
         {/* <TanStackProvider > */}
+        <main>
           {children}
+        </main>
         {/* </TanStackProvider> */}
-     
+
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   )

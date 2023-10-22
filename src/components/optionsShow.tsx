@@ -8,7 +8,8 @@ import { useQueryParams } from '@/hooks/useQueryParams';
 
 
 export const OptionsShow = () => {
-
+    const view = localStorage.getItem('view')
+  
     const router = useRouter()
     const [select, setSelect] = useState('default')
     const { url } = useQueryParams('sort', select)
@@ -30,13 +31,14 @@ export const OptionsShow = () => {
             <select
                 value={select}
                 onChange={(e) => setSelect(e.target.value)}
-                className="w-1/3 block py-2.5 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-[#fd611a]  "
+                className="w-1/2 block py-2.5 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-[#fd611a]  "
                 placeholder='ordenar por'
+                
             >
                 {
                     select === 'default'
                         ? (
-                            <option selected value="default"  >Ordenar por</option>
+                            <option value="default"  >Ordenar por</option>
 
                         )
                         : (
@@ -51,11 +53,21 @@ export const OptionsShow = () => {
 
             </select>
             <div className='flex text-xl text-[#fd611a]  items-center'>
-                <button className='text-[#fd611a] hover:bg-slate-100  py-1 px-1 rounded-md  font-semibold '>
+                <button onClick={() => {
+                    localStorage.setItem('view', 'grid')
+                    router.refresh()
+                }} 
+                className={`${view === 'grid' && 'bg-slate-100'} text-[#fd611a] hover:bg-slate-100 focus:bg-slate-100  py-1 px-1 rounded-md  font-semibold `}
+                >
                     <MdOutlineViewModule />
 
                 </button>
-                <button className='text-[#fd611a] hover:bg-slate-100  py-1 px-1 rounded-md  font-semibold '>
+                <button onClick={() => {
+                    localStorage.setItem('view', 'list')
+                    router.refresh()
+                }}
+                className={`${view === 'list' && 'bg-slate-100'} text-[#fd611a] hover:bg-slate-100  focus:bg-slate-100 py-1 px-1 rounded-md  font-semibold `}
+                >
                     <MdOutlineViewList />
 
                 </button>

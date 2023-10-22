@@ -24,7 +24,7 @@ export const getProducts = async ({ searchParams }: Props) => {
     const search = searchParams?.criterio ? searchParams.criterio : ''
 
 
-    const numberPag = page * 20;
+    const numberPag = page * 21;
     let conditionFind: any = { imagenes: { $nin: null } }
 
 
@@ -54,7 +54,7 @@ export const getProducts = async ({ searchParams }: Props) => {
     const products = await Product.find(conditionFind)
         .sort(conditionSort)
         .skip(numberPag)
-        .limit(20)
+        .limit(21)
         .select('-_id -__v')
         .lean();
 
