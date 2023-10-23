@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination'; 
 import 'swiper/css/autoplay'; 
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade } from 'swiper/modules';
+import { Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { CarouselMarca } from '@/products/interfaces/carouselMarcas';
 
 const marcas:CarouselMarca[] = [
