@@ -6,10 +6,11 @@ import { FC } from 'react';
 
 interface Props {
     product: Product
+    news?: boolean
 }
 
 
-export const ProductCardGrid: FC<Props> = ({ product }) => {
+export const ProductCardGrid: FC<Props> = ({ product, news }) => {
 
     const slug = product.nombre.trim()
         .replaceAll(' ', '_')
@@ -34,19 +35,22 @@ export const ProductCardGrid: FC<Props> = ({ product }) => {
                         ? `https://imagenes.compragamer.com/productos/compragamer_Imganen_general_${product.imagenes[0].nombre}-med.jpg`
                         : undefined}
                         alt={`imagen de ${product.nombre}}`}
-                        className='w-[130px] object-cover'
+                        className={`${news ? 'w-[90px]': 'w-[130px]' } object-cover`}
                     />
                 </picture>
                 {/* <h3>{product.nombre}</h3> */}
-                <div className='h-20  text-center leading-none'>
+                <div className={`${news && 'text-[10px] font-semibold p-2' } h-20  text-center leading-none`}>
                     <span className="">{product.nombre.length >= 100 ? product.nombre.slice(0, 100) + '...' : product.nombre}</span>
                 </div>
-                <strong className=' text-blue-600 text-2xl font-normal mt-1'>{priceSpecial}
+                <strong className={`${news ? 'text-lg' :' text-2xl'} text-blue-600  font-normal mt-1`}>{priceSpecial}
                 </strong>
-                <button className="bg-[#fd611a] text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md ">
-            
-                    SUMAR AL CARRITO
-                </button>
+                {
+                    !news &&
+                    <button className="bg-[#fd611a] text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md ">
+
+                        SUMAR AL CARRITO
+                    </button>
+                }
 
 
             </article>

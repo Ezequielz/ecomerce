@@ -24,9 +24,10 @@ const BASE_URL = 'http://localhost:3000/'
         <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         // spaceBetween={1}
+        className='bg-white'
         slidesPerView={1}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        navigation={true}
+        navigation={false}
         loop={true}
         pagination={{
             clickable: true,

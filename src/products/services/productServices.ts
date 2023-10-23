@@ -64,8 +64,18 @@ export const getProducts = async ({ searchParams }: Props) => {
 
 
 }
+export const getProductsFeatured = async() => {
+    await connectDB();
+                                                    // Mayor o igual a  
+    const products = await Product.find({destacado: { $gte: 1}})
+        .sort({destacado: -1})
+        .select('-_id -__v')
+        .lean();
 
+    await disconnectDB();
 
+    return products
+}
 export const getProductById = async ({ slug }: { slug: string }) => {
     await connectDB();
     const slugArr = slug.split('_')
