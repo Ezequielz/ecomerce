@@ -21,7 +21,7 @@ export interface Product {
     codigo?:                 Codigo;
     sale:                   boolean;
     codigo_principal?:       string[] | null;
-    garantia:               number;
+    garantia?:               number;
     garantia_oficial:       number;
     busca_en_ml?:            string;
     iva:                    number;

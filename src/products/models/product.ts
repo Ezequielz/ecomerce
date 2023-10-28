@@ -27,7 +27,7 @@ const productSchema = new Schema({
         }},
     sale: {type: Boolean, required: true},
     codigo_principal: {type: Array<String> || null, required: false},
-    garantia: {type: Number, required: true},
+    garantia: {type: Number, required: false},
     garantia_oficial: {type: Number, required: true},
     busca_en_ml: {type: String, required: false},
     iva: {type: Number, required: true},

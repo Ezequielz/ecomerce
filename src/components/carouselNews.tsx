@@ -8,7 +8,7 @@ import { ProductCardGrid } from '@/products/components/productCardGrid';
 
 
 export const CarouselNews = ({ products }: { products: Product[] }) => {
-console.log(products)
+// console.log(products)
     return (
         <section className='bg-white  px-16 py-5' >
             <header>

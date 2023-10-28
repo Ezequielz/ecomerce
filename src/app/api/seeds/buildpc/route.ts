@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Product from '@/products/models/product';
+
 import { connectDB, disconnectDB } from '@/libs/mongodb';
+import BuildPC from '@/buildpc/models/buildPc';
 
 
 
@@ -11,12 +12,12 @@ async function handler(req: NextRequest, res: NextResponse) {
         return NextResponse.json({ message: 'No tiene acceso a este API'});
     }
     try {
-        const getInitialData = await fetch('http://localhost:3000/data/Allproducts.json')
+        const getInitialData = await fetch('http://localhost:3000/data/pcbuild.json')
         const initialData =  await getInitialData.json()
 
         await connectDB();
-        await Product.deleteMany();
-        await Product.insertMany( initialData );
+        await BuildPC.deleteMany();
+        await BuildPC.insertMany( initialData );
         await disconnectDB();
      
     } catch (error) {
@@ -25,7 +26,7 @@ async function handler(req: NextRequest, res: NextResponse) {
     }
     
    
-   return NextResponse.json({ message: 'Producto semilla agregado correctamente' });
+   return NextResponse.json({ message: 'buildPC semilla agregado correctamente' });
 
     
 }

@@ -1,7 +1,7 @@
 
 'use client'
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import Link from "next/link";
 import { Categorie } from "../interfaces/categorie";
 import { Filter } from "../interfaces/filter";

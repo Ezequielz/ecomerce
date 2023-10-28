@@ -27,12 +27,12 @@ export const Navbar = () => {
                     </Link>
                 </li>
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                    <a
+                    <Link
                         className="text-neutral-800 transition duration-200 hover:text-slate-100 hover:ease-in-out focus:text-slate-100 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                        href="#"
+                        href="/buildpc"
                         data-te-nav-link-ref
-                    >ARMÁ TU PC</a
-                    >
+                    >ARMÁ TU PC
+                    </Link>
                 </li>
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                     <Link

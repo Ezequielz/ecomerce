@@ -64,6 +64,7 @@ export const getProducts = async ({ searchParams }: Props) => {
 
 
 }
+
 export const getProductsFeatured = async() => {
     await connectDB();
                                                     // Mayor o igual a  
@@ -77,10 +78,11 @@ export const getProductsFeatured = async() => {
     return products
 }
 export const getProductById = async ({ slug }: { slug: string }) => {
+
     await connectDB();
     const slugArr = slug.split('_')
     const id = slugArr[slugArr.length - 1]
-    const productById = await Product.find({ id_producto: id })
+    const productById = await Product.find({ id_producto: id , imagenes: { $nin: null }})
         .select('-_id -__v')
         .lean();
     await disconnectDB();
