@@ -1,5 +1,7 @@
+
 import { getProductById } from "@/products/services/productServices"
 import { BiInfoCircle } from 'react-icons/bi';
+import { Modal } from "./modal";
 
 export const Card = async ({ product }: any) => {
   const prod = await getProductById({ slug: '_' + product.id_producto })
@@ -12,9 +14,8 @@ export const Card = async ({ product }: any) => {
   }
   return (
     <article className={`relative flex flex-row justify-center items-center h-[120px] border-slate-200 bg-white border-solid border-2 rounded-lg p-2 shadow-lg`}>
-      <div className="absolute right-1 top-1 text-blue-500">
-        <BiInfoCircle />
-      </div>
+      <Modal prod={prod}  />
+
       <picture className="w-1/4 block ">
         <img
           className="w-full "
@@ -33,6 +34,7 @@ export const Card = async ({ product }: any) => {
 
         }
       </div>
+  
     </article>
   )
 }

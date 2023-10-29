@@ -54,3 +54,9 @@ padding-left:2px;
 padding-right: 2px;
   left: -17px !important;
 }
+
+.tableDescriptions li:nth-child(even) {
+    /*class="bg-gray-50";*/
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}

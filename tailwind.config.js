@@ -6,6 +6,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
+
   theme: {
     extend: {
       fontFamily: {

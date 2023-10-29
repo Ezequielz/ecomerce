@@ -8,6 +8,7 @@ import ProductDetail from '../models/productDetail';
 import Product from '../models/product';
 import Marca from '../models/marca';
 import CarouselMain from '../models/carouselMain';
+import Group from '../models/group';
 
 
 interface Props {
@@ -177,6 +178,21 @@ export const getCarouselMain = async () => {
     await disconnectDB();
 
     return carouselMain
+
+
+}
+export const getGroups = async () => {
+
+
+    await connectDB();
+    const groups = await Group.find()
+        .sort({ orden: 1 })
+        .select('-_id -__v')
+        .lean();
+
+    await disconnectDB();
+
+    return groups
 
 
 }

@@ -1,0 +1,107 @@
+[
+    {
+        "id": 3,
+        "nombre": "Energia",
+        "orden": 8
+    },
+    {
+        "id": 16,
+        "nombre": "Detalle del Kit",
+        "orden": 12
+    },
+    {
+        "id": 17,
+        "nombre": "Caracteristicas Generales",
+        "orden": 0
+    },
+    {
+        "id": 21,
+        "nombre": "Unidades soportadas",
+        "orden": 7
+    },
+    {
+        "id": 22,
+        "nombre": "Dimensiones",
+        "orden": 2
+    },
+    {
+        "id": 24,
+        "nombre": "Extras",
+        "orden": 17
+    },
+    {
+        "id": 28,
+        "nombre": "Coolers y Disipadores",
+        "orden": 10
+    },
+    {
+        "id": 31,
+        "nombre": "Conectividad",
+        "orden": 1
+    },
+    {
+        "id": 39,
+        "nombre": "Almacenamiento",
+        "orden": 3
+    },
+    {
+        "id": 40,
+        "nombre": "Pantalla",
+        "orden": 11
+    },
+    {
+        "id": 41,
+        "nombre": "Memoria",
+        "orden": 15
+    },
+    {
+        "id": 42,
+        "nombre": "Compatibilidad",
+        "orden": 6
+    },
+    {
+        "id": 43,
+        "nombre": "Accesorios",
+        "orden": 14
+    },
+    {
+        "id": 44,
+        "nombre": "Cableado",
+        "orden": 5
+    },
+    {
+        "id": 45,
+        "nombre": "Rendimiento",
+        "orden": 0
+    },
+    {
+        "id": 46,
+        "nombre": "Cámara",
+        "orden": 4
+    },
+    {
+        "id": 47,
+        "nombre": "Sonido",
+        "orden": 16
+    },
+    {
+        "id": 48,
+        "nombre": "Micrófono",
+        "orden": 18
+    },
+    {
+        "id": 49,
+        "nombre": "Iluminación",
+        "orden": 19
+    },
+    {
+        "id": 50,
+        "nombre": "Componentes",
+        "orden": 20
+    },
+    {
+        "id": 51,
+        "nombre": "Conectividad interna",
+        "orden": 9
+    }
+]
