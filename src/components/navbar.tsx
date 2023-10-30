@@ -2,17 +2,17 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { Modal } from '../buildpc/components/modal';
+
 
 /* eslint-disable @next/next/no-img-element */
 export const Navbar = () => {
     useEffect(() => {
         const init = async () => {
-            const { Collapse, Dropdown,Modal, initTE } = await import("tw-elements");
+            const { Collapse, Dropdown,Modal , initTE } = await import("tw-elements");
             initTE({ Collapse, Dropdown, Modal });
         };
         init();
-    }, []);
+    });
     return (
         <nav
             className="relative bg-[#fd611a] p-5 text-sm">

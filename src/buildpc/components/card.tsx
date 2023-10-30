@@ -1,6 +1,6 @@
 
 import { getProductById } from "@/products/services/productServices"
-import { BiInfoCircle } from 'react-icons/bi';
+
 import { Modal } from "./modal";
 
 export const Card = async ({ product }: any) => {

@@ -2,8 +2,8 @@
 
 import { Product } from "@/products/interfaces/product"
 import { getGroups, getProductDetailsBySlug } from "@/products/services/productServices"
-import { BiInfoCircle } from "react-icons/bi"
 import { Table } from "./table"
+import { BtnModal } from "./buttons"
 
 
 export const Modal = async ({ prod }: { prod: Product }) => {
@@ -20,19 +20,11 @@ export const Modal = async ({ prod }: { prod: Product }) => {
             }
         })
     )
-    console.log(validGroups)
+   
 
     return (
         <>
-            <button
-                className="absolute right-1 top-1 text-blue-500"
-                type="button"
-                data-te-toggle="modal"
-                data-te-target={`#modalProduct${prod.id_producto}`}
-                data-te-ripple-init
-            >
-                <BiInfoCircle />
-            </button>
+            <BtnModal id={prod.id_producto}/>
             <div
                 data-te-modal-init
                 className="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"

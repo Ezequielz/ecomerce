@@ -5,6 +5,7 @@ import { useQueryParams } from '@/hooks/useQueryParams'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { BiInfoCircle } from 'react-icons/bi'
 
 
 export const ButtonsForBuild = ({ tipo, paso }: { tipo?: string | undefined, paso?: string | undefined | number }) => {
@@ -23,7 +24,7 @@ export const ButtonsForBuild = ({ tipo, paso }: { tipo?: string | undefined, pas
                 <header className="flex flex-row gap-2 pb-4">
                     <Link href={`/buildpc?tipo=27&paso=1`}
                         className='border-[1px] border-solid border-slate-400 text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md ' >
-                        <img className="w-16 "  src="https://imagenes.compragamer.com/assets/marcas-sponsor/amd.png" alt="" />
+                        <img className="w-16 " src="https://imagenes.compragamer.com/assets/marcas-sponsor/amd.png" alt="" />
                     </Link>
                     <Link href={`/buildpc?tipo=48&paso=1`}
                         className="border-[1px] border-solid border-red-500 text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md " >
@@ -69,5 +70,32 @@ export const ButtonsForBuild = ({ tipo, paso }: { tipo?: string | undefined, pas
                 </header>
             }
         </>
+    )
+}
+
+
+export const BtnModal = ({id}: {id: number}) => {
+    // console.log('BTN')
+    
+    useEffect(() => {
+       
+        const init = async () => {
+            const { Modal , initTE } = await import("tw-elements");
+            initTE({  Modal });
+        };
+        init();
+    });
+
+    return (
+        <button
+           
+            className="absolute right-1 top-1 text-blue-500"
+            type="button"
+            data-te-toggle="modal"
+            data-te-target={`#modalProduct${id}`}
+            data-te-ripple-init
+        >
+            <BiInfoCircle />
+        </button>
     )
 }

@@ -4,7 +4,6 @@ import { AsideForBuild } from "@/buildpc/components/aside"
 import { ButtonsForBuild } from "@/buildpc/components/buttons"
 import { Card } from "@/buildpc/components/card"
 import { getProductsToBuild } from "@/buildpc/services/buildServices"
-import { ProductCardGrid } from "@/products/components/productCardGrid"
 
 
 interface Props {

@@ -28,11 +28,16 @@ export const Table = ({ group, prodDetail }: Props) => {
                 <li key={i} className='text-xs p-1 '>
                   <div className="flex flex-row gap-2 justify-between ">
                     <span className="font-semibold">
-                      {caract.etiqueta}
+                      {caract.etiqueta.charAt(0).toUpperCase() + caract.etiqueta.slice(1)}
 
                     </span>
                     <span >
-                      {caract.valor}
+                      {
+                        caract.tipo === 'booleano' 
+                        ? (caract.valor === '1' ? 'Yes' : 'No')
+                        : caract.valor + (caract.unidades && caract.unidades)
+                      }
+                     
                     </span>
                   </div>
                 </li>
