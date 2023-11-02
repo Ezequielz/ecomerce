@@ -3,7 +3,9 @@
 import { AsideForBuild } from "@/buildpc/components/aside"
 import { ButtonsForBuild } from "@/buildpc/components/buttons"
 import { Card } from "@/buildpc/components/card"
+import { CardSkelleton } from "@/buildpc/components/cardSkelleton"
 import { getProductsToBuild } from "@/buildpc/services/buildServices"
+import { Suspense } from "react"
 
 
 interface Props {
@@ -48,7 +50,11 @@ export default async function BuildPC({ params: { slug }, searchParams }: Props)
                         {
                             products.map((prod: any) => (
                                 <li key={prod.id_producto}>
-                                    <Card product={prod} />
+                                    <Suspense fallback={<CardSkelleton />}>
+
+                                        <Card product={prod} />
+                                     
+                                    </Suspense>
                                 </li>
                             ))
                         }

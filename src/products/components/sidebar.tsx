@@ -14,12 +14,11 @@ interface Props {
     categories: Categorie[],
     allFilters: Filter[],
     cat?: Categorie,
-    products: Product[]
-  
+      
 }
 
 
-export const Sidebar:FC<Props> =  ({allFilters,categories, cat, products}) => {
+export const Sidebar:FC<Props> =  ({allFilters,categories, cat}) => {
    
     const notShow = ['11', '23', '13', '18', '16', '20', '22', '28', '17', '12', '27']
     const filters =  allFilters.filter(filt => !notShow.includes(filt.id.toString()))
@@ -190,7 +189,7 @@ export const Sidebar:FC<Props> =  ({allFilters,categories, cat, products}) => {
                     id={`FiltrosCollapse`}
                 // aria-labelledby={}
                 >
-                    <SideFilters cat={cat} products={products} />
+                    <SideFilters cat={cat}  />
 
                 </div>
             </div>

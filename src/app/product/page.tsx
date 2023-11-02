@@ -31,7 +31,7 @@ interface Props {
         <section className="px-36 py-4 ">
             <Banner cat={cat} search={!!search}/>
             <div className="flex flex-row justify-center items-start">
-                <Sidebar allFilters={allFilters} categories={categories} cat={categorie} products={products}/>
+                <Sidebar allFilters={allFilters} categories={categories} cat={categorie} />
                 <ProductList products={products} chip={ {catName: categorie?.nombre , search}}/>
 
             </div>

@@ -1,9 +1,7 @@
 import { Categorie } from "../interfaces/categorie"
-import { Product } from "../interfaces/product"
-import { getCategorieById } from "../services/productServices"
 
-export const SideFilters = ({ cat, products }: { cat: Categorie | undefined, products: Product[] | undefined}) => {
-// const a = products?.map(async(p) => await getCategorieById({id:15}))
+export const SideFilters = ({ cat }: { cat: Categorie | undefined}) => {
+
     return (
         <>
             {
