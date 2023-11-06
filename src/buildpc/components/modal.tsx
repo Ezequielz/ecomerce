@@ -7,8 +7,12 @@ import { BtnModal } from "./buttons"
 
 
 export const Modal = async ({ prod }: { prod: Product }) => {
-    const prodDetail = await getProductDetailsBySlug({ slug: '_' + prod.id_producto })
-    const groups = await getGroups()
+
+    const [prodDetail, groups] = await Promise.all([
+        getProductDetailsBySlug({ slug: '_' + prod.id_producto }),
+        getGroups()
+      ]);
+
 
     const validGroups: number[] = []
     prodDetail && prodDetail.caracteristicas && prodDetail.caracteristicas.map(carac =>

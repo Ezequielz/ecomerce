@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { AsideForBuild } from "@/buildpc/components/aside"
+import { BuildList } from "@/buildpc/components/buildList"
 import { ButtonsForBuild } from "@/buildpc/components/buttons"
-import { Card } from "@/buildpc/components/card"
-import { CardSkelleton } from "@/buildpc/components/cardSkelleton"
-import { getProductsToBuild } from "@/buildpc/services/buildServices"
 import { Suspense } from "react"
 
 
@@ -19,7 +17,7 @@ interface Props {
 export default async function BuildPC({ params: { slug }, searchParams }: Props) {
     const paso = searchParams?.paso && searchParams.paso
     const tipo = searchParams?.tipo && searchParams.tipo
-    const products: any = await getProductsToBuild({ searchParams })
+    
     const urlImg = 'https://imagenes.compragamer.com/assets/marcas-sponsor/'
    
     return (
@@ -44,21 +42,9 @@ export default async function BuildPC({ params: { slug }, searchParams }: Props)
                 <section className="w-2/3">
                     <ButtonsForBuild tipo={tipo} paso={paso} />
 
-                    <ul
-                        className=" grid grid-cols-2  gap-4  "
-                    >
-                        {
-                            products.map((prod: any) => (
-                                <li key={prod.id_producto}>
-                                    <Suspense fallback={<CardSkelleton />}>
-
-                                        <Card product={prod} />
-                                     
-                                    </Suspense>
-                                </li>
-                            ))
-                        }
-                    </ul>
+                    <Suspense fallback={<div>cargando...</div>}>
+                     <BuildList searchParams={searchParams}/>
+                    </Suspense>
 
                 </section>
             </div>

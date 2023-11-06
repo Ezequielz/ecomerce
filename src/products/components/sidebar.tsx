@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Categorie } from "../interfaces/categorie";
 import { Filter } from "../interfaces/filter";
 import { SideFilters } from "./sideFilters";
-import { Product } from "../interfaces/product";
 
 
 
