@@ -2,8 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import { useQueryParams } from "@/hooks/useQueryParams"
+import { useBuildPCStore } from "@/store/buildPC"
 import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 
 const hardware = [
@@ -49,27 +50,27 @@ const hardware = [
     }
 ]
 
-interface Build {
-    paso: string
-    prod: string[]
-}
-export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
-    const [newPaso, setNewPaso] = useState('')
+export const AsideForBuild = () => {
+    const { build, watts, paso, nextPaso, prevPaso, customPaso, resetProductsBuild } = useBuildPCStore(state => state)
+
     const router = useRouter()
-    const { url } = useQueryParams('paso', newPaso)
+    const { url } = useQueryParams('paso', paso)
     const urlImg = 'https://compragamer.com/PatchRouterSection/assets/img/arma-pc/'
-    // useEffect(() => {
-    //     if (paso){
-    //         setNewPaso(paso)
-    //     }
-    // }, [paso])
-    const build: Build[] = localStorage.getItem('pcbuild') ? JSON.parse(localStorage.getItem('pcbuild')!) : []
-    
+
+    let totalPrice = 0
+
+    Object.values(build).map(prod => {
+        totalPrice += prod.precioEspecial
+    })
 
     useEffect(() => {
-        console.log('aside')
+
         router.push(url)
-    }, [newPaso])
+    }, [paso])
+
+    const handleReset = () => {
+        resetProductsBuild()
+    }
 
 
 
@@ -79,7 +80,7 @@ export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
             <section className="bg-white grid grid-cols-2 gap-2 py-6 justify-center items-center rounded-sm shadow-lg">
                 {
                     hardware.map(hard => (
-                        <button key={hard.id} onClick={() => setNewPaso(p => p = hard.id.toString())} className="flex justify-center">
+                        <button key={hard.id} onClick={() => customPaso((hard.id).toString())} className="flex justify-center">
                             <img className="w-14 h-14" src={`${urlImg}${paso !== hard.id.toString() ? hard.img[0] : hard.img[1]}`} alt="" />
                         </button>
 
@@ -89,17 +90,18 @@ export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
             </section>
 
             <div className="grid grid-cols-2 gap-2 justify-center items-center bg-white mt-2 rounded-sm shadow-lg p-3  text-center text-sm">
-                <span>(100 watts)</span>
-                <span>Total : $ 124.234</span>
+                <span>({watts} watts)</span>
+                <span>Total : {totalPrice.toLocaleString('es-ar', {
+                    currency: 'ARS',
+                    style: 'currency',
+                    maximumSignificantDigits: 8
+                })}</span>
 
                 <div className="relative flex flex-row m-auto">
 
-                    <button className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
+                    <button onClick={prevPaso} className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
                         VOLVER ATRÁS
                     </button>
-
-
-
 
                     <button
 
@@ -118,7 +120,7 @@ export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
                         aria-labelledby="drop_button_1"
                         data-te-dropdown-menu-ref>
 
-                        <button className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
+                        <button onClick={handleReset} className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
                             REINICIAR
                         </button>
                     </div>
@@ -130,7 +132,7 @@ export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
 
                 <div className="relative flex flex-row m-auto">
 
-                    <button className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
+                    <button onClick={nextPaso} className="bg-white hover:bg-slate-100 text-[#fd611a] py-2 px-4 border-[1px] border-[#fd611a] rounded-[12px]  text-xs font-semibold flex gap-2 justify-center items-center  ">
                         SALTAR PASO
                     </button>
 
@@ -164,7 +166,7 @@ export const AsideForBuild = ({ paso }: { paso?: string | undefined }) => {
                 </div>
 
 
-            
+
             </div>
         </aside>
     )

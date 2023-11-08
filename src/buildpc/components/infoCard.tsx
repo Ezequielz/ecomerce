@@ -2,62 +2,18 @@
 'use client'
 
 import { type Product } from '@/products/interfaces/product'
-import { useRouter } from 'next/navigation'
+import { useBuildPCStore } from '@/store/buildPC'
 
+export const InfoCard = ({ prod } : {prod : Product}) => {
 
-interface Props {
-    searchParams?: { [key: string]: string | undefined },
-    prod: Product
-}
+    const { build, paso, nextPaso, addProductBuild, getTotalWatts } = useBuildPCStore(state => state)
 
-interface Build {
-    paso: string
-    prod: string[]
-}
-
-export const InfoCard = ({ prod, searchParams }: Props) => {
-
-    const router = useRouter()
-    let paso = searchParams?.paso ? searchParams.paso : '1'
-
-
+   
     const handeSelect = (e: React.MouseEvent<HTMLElement>) => {
-
         e.preventDefault()
-        const build: Build[] = localStorage.getItem('pcbuild') ? JSON.parse(localStorage.getItem('pcbuild')!) : []
-
-        let found = false;
-        for (const item of build) {
-            if (item.paso === paso) {
-                item.prod.push(prod.id_producto.toString());
-                found = true;
-            }
-        }
-        if (!found) {
-
-            build.push({ paso, prod: [prod.id_producto.toString()] });
-        }
-
-        localStorage.setItem('pcbuild', JSON.stringify(build))
-
-        if (paso  === '4') {
-            build.map((item) => {
-        
-                if (item.paso === '4') {
-                    console.log(item.prod.length)
-                    if (item.prod.length >= 4) 
-                    return   router.push(`buildpc?paso=${(+paso + 1).toString()}`)
-                }                        
-                
-            })
-
-        } else {
-
-        
-            router.push(`buildpc?paso=${(+paso + 1).toString()}`)
-        }
+        addProductBuild({...prod ,paso})
+        getTotalWatts()
     }
-
 
     const img = prod && prod.imagenes && prod.imagenes?.length >= 1 ? prod.imagenes[0].nombre : undefined
 

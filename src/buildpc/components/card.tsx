@@ -19,7 +19,7 @@ export const Card = async ({ product, searchParams }: Props) => {
   return (
     <article className={`relative h-[120px] border-slate-200 bg-white border-solid border-2 rounded-lg px-2 shadow-lg  justify-center items-center`}>
       <Modal prod={prod}  />
-      <InfoCard  prod={prod} searchParams={searchParams}/>
+      <InfoCard  prod={prod}/>
   
     </article>
   )
