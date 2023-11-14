@@ -4,49 +4,69 @@
 import { useQueryParams } from "@/hooks/useQueryParams"
 import { useBuildPCStore } from "@/store/buildPC"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
 
-const hardware = [
+let hardware = [
     {
         id: 1,
-        img: ['cpu1.png', 'cpu2.png']
+        tag: 'cpu',
+        imgDefault: ['cpu1.png', 'cpu2.png'],
+        img: ''
     },
     {
         id: 2,
-        img: ['mother1.png', 'mother2.png']
+        tag: 'mother',
+        imgDefault: ['mother1.png', 'mother2.png'],
+        img: ''
     },
     {
         id: 3,
-        img: ['cooler1.png', 'cooler2.png']
+        tag: 'coolercpu',
+        imgDefault: ['cooler1.png', 'cooler2.png'],
+        img: ''
     },
     {
         id: 4,
-        img: ['memo1.png', 'memo2.png']
+        tag: 'mem',
+        imgDefault: ['memo1.png', 'memo2.png'],
+        img: ''
     },
     {
         id: 5,
-        img: ['gpu1.png', 'gpu2.png']
+        tag: 'video',
+        imgDefault: ['gpu1.png', 'gpu2.png'],
+        img: ''
     },
     {
         id: 6,
-        img: ['hhd1.png', 'hhd2.png']
+        tag: 'hd',
+        imgDefault: ['hhd1.png', 'hhd2.png'],
+        img: ''
     },
     {
         id: 7,
-        img: ['poder1.png', 'poder2.png']
+        tag: 'fuente',
+        imgDefault: ['poder1.png', 'poder2.png'],
+        img: ''
     },
     {
         id: 8,
-        img: ['gabo1.png', 'gabo2.png']
+        tag: 'gab',
+        imgDefault: ['gabo1.png', 'gabo2.png'],
+        img: ''
     },
     {
         id: 9,
-        img: ['moni1.png', 'moni2.png']
+        tag: 'monitores',
+        imgDefault: ['moni1.png', 'moni2.png'],
+        img: ''
     },
     {
         id: 10,
-        img: ['periferico1.png', 'periferico2.png']
+        tag: 'perifericos',
+        imgDefault: ['periferico1.png', 'periferico2.png'],
+        img: ''
     }
 ]
 
@@ -59,10 +79,18 @@ export const AsideForBuild = () => {
 
     let totalPrice = 0
 
-    Object.values(build).map(prod => {
-        totalPrice += prod.precioEspecial
-    })
+    if (Object.values(build).length > 0) {
+        Object.values(build).forEach((items: any) => {
+            items.forEach((item: any) => {
 
+                if (item.precioEspecial) {
+                    totalPrice += item.precioEspecial;
+                }
+        
+            });
+        });
+    }
+   
     useEffect(() => {
 
         router.push(url)
@@ -74,16 +102,33 @@ export const AsideForBuild = () => {
 
 
 
-
     return (
         <aside className="w-1/3    h-full">
             <section className="bg-white grid grid-cols-2 gap-2 py-6 justify-center items-center rounded-sm shadow-lg">
-                {
-                    hardware.map(hard => (
-                        <button key={hard.id} onClick={() => customPaso((hard.id).toString())} className="flex justify-center">
-                            <img className="w-14 h-14" src={`${urlImg}${paso !== hard.id.toString() ? hard.img[0] : hard.img[1]}`} alt="" />
-                        </button>
 
+                {
+                    Object.values(build).map((hard, i) => (
+                        <button
+                            key={i}
+                            className="h-fit w-max flex justify-center relative"
+                            onClick={() => customPaso((i + 1).toString())}
+                        >
+                            {
+                                hard.length >= 2 &&
+                                <div className="absolute top-0 right-5 flex items-center justify-center w-6 h-6 text-xs font-bold text-red-500 border-[1px] border-[#000]  rounded-full">{hard.length}</div>
+                            }
+
+                            {
+                                hard.length < 1 ? (
+
+                                    <img className="w-14 h-14" src={`${urlImg}${+paso !== hardware[i].id ? hardware[i].imgDefault[0] : hardware[i].imgDefault[1]}`} alt="" />
+                                )
+                                    : (
+
+                                        <img className="w-14 h-14" src={`https://imagenes.compragamer.com/productos/compragamer_Imganen_general_${hard[0].imagenes[0].nombre}-mini.jpg`} alt="" />
+                                    )
+                            }
+                        </button>
                     ))
                 }
 

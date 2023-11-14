@@ -6,13 +6,13 @@ import { useBuildPCStore } from '@/store/buildPC'
 
 export const InfoCard = ({ prod } : {prod : Product}) => {
 
-    const { build, paso, nextPaso, addProductBuild, getTotalWatts } = useBuildPCStore(state => state)
+    const { paso, nextPaso, addProductBuild, getTotalWatts } = useBuildPCStore(state => state)
 
-   
     const handeSelect = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
         addProductBuild({...prod ,paso})
-        getTotalWatts()
+        
+        if (Number(paso) <= 6) { getTotalWatts()}
     }
 
     const img = prod && prod.imagenes && prod.imagenes?.length >= 1 ? prod.imagenes[0].nombre : undefined
