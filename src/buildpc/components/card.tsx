@@ -6,11 +6,10 @@ import { InfoCard } from "./infoCard";
 import { Product } from "@/products/interfaces/product";
 
 interface Props {
-  searchParams?: { [key: string]: string | undefined },
   product: Product
 }
 
-export const Card = async ({ product, searchParams }: Props) => {
+export const Card = async ({ product }: Props) => {
   const prod = await getProductById({ slug: '_' + product.id_producto })
  
   if (!prod) {

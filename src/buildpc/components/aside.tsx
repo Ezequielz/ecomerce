@@ -7,74 +7,16 @@ import { useRouter } from "next/navigation"
 import { useEffect } from 'react';
 
 
-let hardware = [
-    {
-        id: 1,
-        tag: 'cpu',
-        imgDefault: ['cpu1.png', 'cpu2.png'],
-        img: ''
-    },
-    {
-        id: 2,
-        tag: 'mother',
-        imgDefault: ['mother1.png', 'mother2.png'],
-        img: ''
-    },
-    {
-        id: 3,
-        tag: 'coolercpu',
-        imgDefault: ['cooler1.png', 'cooler2.png'],
-        img: ''
-    },
-    {
-        id: 4,
-        tag: 'mem',
-        imgDefault: ['memo1.png', 'memo2.png'],
-        img: ''
-    },
-    {
-        id: 5,
-        tag: 'video',
-        imgDefault: ['gpu1.png', 'gpu2.png'],
-        img: ''
-    },
-    {
-        id: 6,
-        tag: 'hd',
-        imgDefault: ['hhd1.png', 'hhd2.png'],
-        img: ''
-    },
-    {
-        id: 7,
-        tag: 'fuente',
-        imgDefault: ['poder1.png', 'poder2.png'],
-        img: ''
-    },
-    {
-        id: 8,
-        tag: 'gab',
-        imgDefault: ['gabo1.png', 'gabo2.png'],
-        img: ''
-    },
-    {
-        id: 9,
-        tag: 'monitores',
-        imgDefault: ['moni1.png', 'moni2.png'],
-        img: ''
-    },
-    {
-        id: 10,
-        tag: 'perifericos',
-        imgDefault: ['periferico1.png', 'periferico2.png'],
-        img: ''
-    }
-]
+
+
 
 export const AsideForBuild = () => {
-    const { build, watts, paso, nextPaso, prevPaso, customPaso, resetProductsBuild } = useBuildPCStore(state => state)
+    const { build, hardware, watts, paso, tipo,
+         nextPaso, prevPaso, customPaso, resetProductsBuild } = useBuildPCStore(state => state)
 
     const router = useRouter()
     const { url } = useQueryParams('paso', paso)
+    const { url: url2 } = useQueryParams('tipo', tipo?.toString() || '')
     const urlImg = 'https://compragamer.com/PatchRouterSection/assets/img/arma-pc/'
 
     let totalPrice = 0
@@ -86,15 +28,31 @@ export const AsideForBuild = () => {
                 if (item.precioEspecial) {
                     totalPrice += item.precioEspecial;
                 }
-        
+
             });
         });
     }
-   
+
+    useEffect(() => {
+        const init = async () => {
+            const { Tooltip, initTE } = await import("tw-elements");
+            initTE({ Tooltip });
+        };
+        init();
+    }, [build]);
+
     useEffect(() => {
 
         router.push(url)
     }, [paso])
+
+    useEffect(() => {
+        router.push(url2)
+    }, [tipo])
+    
+
+
+
 
     const handleReset = () => {
         resetProductsBuild()
@@ -107,29 +65,56 @@ export const AsideForBuild = () => {
             <section className="bg-white grid grid-cols-2 gap-2 py-6 justify-center items-center rounded-sm shadow-lg">
 
                 {
-                    Object.values(build).map((hard, i) => (
-                        <button
-                            key={i}
-                            className="h-fit w-max flex justify-center relative"
-                            onClick={() => customPaso((i + 1).toString())}
-                        >
-                            {
-                                hard.length >= 2 &&
-                                <div className="absolute top-0 right-5 flex items-center justify-center w-6 h-6 text-xs font-bold text-red-500 border-[1px] border-[#000]  rounded-full">{hard.length}</div>
-                            }
+                    Object.values(build).map((hard, i) => {
 
-                            {
-                                hard.length < 1 ? (
+                        let objectNames = ''
 
-                                    <img className="w-14 h-14" src={`${urlImg}${+paso !== hardware[i].id ? hardware[i].imgDefault[0] : hardware[i].imgDefault[1]}`} alt="" />
-                                )
-                                    : (
+                        hard.map((h: any) => {
 
-                                        <img className="w-14 h-14" src={`https://imagenes.compragamer.com/productos/compragamer_Imganen_general_${hard[0].imagenes[0].nombre}-mini.jpg`} alt="" />
+                            h.nombre
+                            objectNames = objectNames + h.nombre + '\n'
+                        })
+
+
+
+                        return (
+                            <button
+                                key={i}
+                                className="h-fit w-max flex justify-center relative"
+                                onClick={() => customPaso((i + 1).toString())}
+                            >
+
+
+                                {
+                                    hard.length >= 2 &&
+
+
+                                    <div data-te-toggle="tooltip"
+                                        data-te-html="true"
+                                        data-te-ripple-init
+                                        data-te-ripple-color="light"
+                                        title={objectNames}
+                                        style={{ border: '1px solid red' }}
+                                        className="absolute top-0 right-5 flex items-center justify-center w-6 h-6 text-xs font-bold text-red-500 rounded-full">
+                                        {hard.length}
+                                    </div>
+
+
+                                }
+
+                                {
+                                    hard.length < 1 ? (
+
+                                        <img className="w-14 h-14" src={`${urlImg}${+paso !== hardware[i].id ? hardware[i].imgDefault[0] : hardware[i].imgDefault[1]}`} alt="" />
                                     )
-                            }
-                        </button>
-                    ))
+                                        : (
+
+                                            <img className="w-14 h-14" src={`https://imagenes.compragamer.com/productos/compragamer_Imganen_general_${hard[0].imagenes[0].nombre}-mini.jpg`} alt="" />
+                                        )
+                                }
+                            </button>
+                        )
+                    })
                 }
 
             </section>

@@ -17,7 +17,10 @@ type Store = {
     build: IBuildPC,
     paso: string,
     watts: number,
+    hardware: IHardware[],
+    tipo?: number,
     
+    setTipo: (n : number) => void,
     addProductBuild: (prod: ProductBuild) => void,
     resetProductsBuild: () => void,
     getTotalWatts: () => void,
@@ -39,10 +42,84 @@ const initialBuild:IBuildPC = {
     perifericos: []
 }
 
+interface IHardware {
+    id: number;
+    imgDefault: string[];
+    title: string;
+    txt: string;
+
+}
+
+let hardware: IHardware[] = [
+    {
+        id: 1,
+        imgDefault: ['cpu1.png', 'cpu2.png'],
+        title: 'Elegí tu Procesador',
+        txt: 'Tu procesador es la pieza central del rendimiento de los programas. Para saber si un procesador es potente lo que tenés que medir es la frecuencia, el ancho de bus, la memoria caché y los núcleos e hilos de procesamiento.'
+    },
+    {
+        id: 2,
+        imgDefault: ['mother1.png', 'mother2.png'],
+        title: 'Elegí tu Mother',
+        txt: 'Es donde se conectarán todos los componentes de tu PC. Según el modelo que elijas tendrás diferentes beneficios de conectividad y expansión'
+    },
+    {
+        id: 3,
+        imgDefault: ['cooler1.png', 'cooler2.png'],
+        title: 'Elegí tu Cooler',
+        txt: 'El cooler mantiene la temperatura de tu equipo, evitando el daño en los componentes y permitiendo que este funcione correctamente.'
+    },
+    {
+        id: 4,
+        imgDefault: ['memo1.png', 'memo2.png'],
+        title: 'Elegí tu Memorias',
+        txt: 'Las memorias sirven para cargar y almacenar todas las instrucciones que se ejecutan en el procesador. Lo que se debe tener en cuenta en esta sección es el tamaño, la frecuencia y la cantidad de módulos'
+    },
+    {
+        id: 5,
+        imgDefault: ['gpu1.png', 'gpu2.png'],
+        title: 'Elegí tu Placa de Video',
+        txt: 'El procesador gráfico de una tarjeta es muchísimo más potente que el que tienen los procesadores, por esta razón es necesaria para el buen funcionamiento del equipo y muy recomendada para gamers y profesionales de los gráficos.'
+    },
+    {
+        id: 6,
+        imgDefault: ['hhd1.png', 'hhd2.png'],
+        title: 'Elegí tu Almacenamiento',
+        txt: 'Acá es donde se guardarán tus documentos. Se debe tener en cuenta el tamaño y la velocidad. Las unidades SSD son más veloces y pueden ser utilizadas como unidad principal de almacenamiento o como un complemento de un almacenamiento HDD.'
+    },
+    {
+        id: 7,
+        imgDefault: ['poder1.png', 'poder2.png'],
+        title: 'Elegí tu Fuente',
+        txt: 'La fuente es la encargada de alimentar al resto de los componentes y va a ser uno de los factores a tener en cuenta si querés armar una pc potente.'
+    },
+    {
+        id: 8,
+        imgDefault: ['gabo1.png', 'gabo2.png'],
+        title: 'Elegí tu Gabinete',
+        txt: 'Es fundamental para el armado de la pc ya que contendrá todos los componentes funcionales de la misma. Podés revisar las medidas en el botón de especificaciones'
+    },
+    {
+        id: 9,
+        imgDefault: ['moni1.png', 'moni2.png'],
+        title: 'Elegí tu Monitor',
+        txt: 'El monitor es fundamental si querés disfrutar de tus juegos y peliculas favoritas'
+    },
+    {
+        id: 10,
+        imgDefault: ['periferico1.png', 'periferico2.png'],
+        title: 'Elegí tu Periféricos',
+        txt: 'Mouses, Teclados, MousePad, Auriculares, Coolers, y mas'
+    }
+]
+
 export const useBuildPCStore = create<Store>()((set, get) => ({
     build: initialBuild,
     paso: '1',
     watts: 0, 
+    hardware,
+    tipo: undefined,
+
     resetProductsBuild: () => {
         set({ build: {}, watts: 0, paso: '1' })
     },
@@ -135,6 +212,9 @@ export const useBuildPCStore = create<Store>()((set, get) => ({
     },
     customPaso: (paso: string) => {
         set({ paso })
+    },
+    setTipo: ( n : number) => {
+        set({tipo: n})
     }
 
 }))

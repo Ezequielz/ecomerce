@@ -16,10 +16,10 @@ export const BuildList = async({searchParams}: Props) => {
         >
             {
                 products.map((prod: any) => (
-                    <li key={prod.id_producto}>
+                    <li key={prod.id_producto} >
                         <Suspense fallback={<CardSkelleton />}>
 
-                            <Card product={prod} searchParams={searchParams}/>
+                            <Card product={prod} />
 
                         </Suspense>
                     </li>

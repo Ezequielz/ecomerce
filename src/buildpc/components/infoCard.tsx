@@ -1,17 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
+
 import { type Product } from '@/products/interfaces/product'
 import { useBuildPCStore } from '@/store/buildPC'
 
+
+
 export const InfoCard = ({ prod } : {prod : Product}) => {
 
-    const { paso, nextPaso, addProductBuild, getTotalWatts } = useBuildPCStore(state => state)
+    const { paso, addProductBuild, getTotalWatts, setTipo } = useBuildPCStore(state => state)
 
     const handeSelect = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
         addProductBuild({...prod ,paso})
         
+        if (prod.id_subcategoria === 27){
+            setTipo(27)
+        }
+        if (prod.id_subcategoria === 48){
+            setTipo(48)
+        }
+  
         if (Number(paso) <= 6) { getTotalWatts()}
     }
 

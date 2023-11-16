@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import { useQueryParams } from '@/hooks/useQueryParams'
+import { useBuildPCStore } from '@/store/buildPC'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -9,6 +10,7 @@ import { BiInfoCircle } from 'react-icons/bi'
 
 
 export const ButtonsForBuild = ({ tipo, paso }: { tipo?: string | undefined, paso?: string | undefined | number }) => {
+    const { setTipo } = useBuildPCStore(state => state)
     const [sub, setSub] = useState('')
     const router = useRouter()
     const { url } = useQueryParams('sub', sub)
@@ -22,14 +24,17 @@ export const ButtonsForBuild = ({ tipo, paso }: { tipo?: string | undefined, pas
             {
                 (paso === '1' || !paso) &&
                 <header className="flex flex-row gap-2 pb-4">
-                    <Link href={`/buildpc?tipo=27&paso=1`}
+                    <div 
+                        onClick={() => setTipo(27)}
                         className='border-[1px] border-solid border-slate-400 text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md ' >
+                            
                         <img className="w-16 " src="https://imagenes.compragamer.com/assets/marcas-sponsor/amd.png" alt="" />
-                    </Link>
-                    <Link href={`/buildpc?tipo=48&paso=1`}
+                    </div>
+                    <div 
+                        onClick={() => setTipo(48)}
                         className="border-[1px] border-solid border-red-500 text-white py-2 px-4 rounded-md text-xs font-semibold flex gap-2 justify-center items-center shadow-md " >
                         <img className="w-16" src="https://imagenes.compragamer.com/assets/marcas-sponsor/intel.png" alt="" />
-                    </Link>
+                    </div>
 
                 </header>
             }
